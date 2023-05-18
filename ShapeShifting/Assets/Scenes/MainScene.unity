@@ -349,7 +349,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 58.549, y: 79.189, z: 109.632}
 --- !u!1 &194996480
 GameObject:
@@ -883,7 +883,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &640729670
 MonoBehaviour:
@@ -916,12 +916,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9dde250b2b98864ba87f4507269cf0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Vehicle: []
+  Vehicle:
+  - {fileID: 4504628361079230104}
+  - {fileID: 196425262}
+  - {fileID: 1612487984}
   terrainManager: {fileID: 1428946164}
-  currentVehicle: {fileID: 196425262}
-  choseVehicle: {fileID: 0}
+  currentVehicle: {fileID: 756872690}
+  choseVehicle: {fileID: 756872690}
   currentVehiclePosition: {x: 0, y: 0, z: 0}
-  Cam: {fileID: 0}
+  Cam: {fileID: 422541975}
 --- !u!1 &756872690
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,7 +944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &756872691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,7 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1ea559302ac4a349236cf840010e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.15
+  speed: 0.1
   gravity: -10
   cc: {fileID: 0}
 --- !u!143 &756872692
@@ -1033,7 +1036,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756872690}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 8.43, y: 0, z: -3.74}
+  m_LocalPosition: {x: 8.43, y: 0.3, z: -3.74}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1160,7 +1163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8072000018344801538, guid: 2f7535b277bff4de99638aeb9584a41e, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8072000018344801538, guid: 2f7535b277bff4de99638aeb9584a41e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1622,7 +1625,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1428946161
 MonoBehaviour:
@@ -2722,7 +2725,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4510004954695607366
 Transform:
   m_ObjectHideFlags: 0
@@ -2731,14 +2734,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4504628361079230104}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 8.387, y: 0.11, z: -3.678}
+  m_LocalPosition: {x: 8.387, y: 0.6, z: -3.678}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1769163048}
   - {fileID: 1066795439}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!54 &4510004954695607367
 Rigidbody:

@@ -60,6 +60,7 @@ public class HelicopterController : MonoBehaviour
     }
     public void UpdateCurentHight()
     {
+        characterMove.speed = 0.05f;
         curentHight = terrainManager.currentPosition.y;
     }
 }
