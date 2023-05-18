@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a59a5f4ee8de74ce9ac46a07b78b463d, type: 3}
+  m_Name: Fly
+  m_EditorClassIdentifier: 
+  terrain: {fileID: 2294372806628365394, guid: aec496ff1e8ac4b9a80407fbf7436f8c, type: 3}
+  terrainCod: 4
+  maxInSuccesion: 1
+  maxCall: 1
+  maxCallTemp: 0
+  attachObject:
+  - {fileID: 3808320960917971977, guid: 457766dab933a445da58072bbcd6e412, type: 3}
