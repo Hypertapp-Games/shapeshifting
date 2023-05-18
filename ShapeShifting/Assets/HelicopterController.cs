@@ -10,12 +10,14 @@ public class HelicopterController : MonoBehaviour
     public GameObject colisions;
     public CharacterMove characterMove;
     private float temp;
-    
+    public TerrainManager terrainManager;
+
 
     void Start()
     {
         characterMove = this.GetComponent<CharacterMove>();
         temp = characterMove.speed;
+        UpdateCurentHight();
         //StartCoroutine(FlyUp());
     }
 
@@ -56,18 +58,8 @@ public class HelicopterController : MonoBehaviour
             characterMove.speed = temp;
         }
     }
-
-    // public IEnumerator FlyUp()
-    // {
-    //     characterMove.gravity = 5;
-    //     if (gameObject.transform.position.y > curentHight)
-    //     {
-    //         characterMove.gravity = 0;
-    //         yield return null;
-    //         yield break;
-    //
-    //     }
-    //     //StartCoroutine(2f.Tweeng((p) => transform.position = p,
-    //         //transform.position, transform.position + new Vector3(0, curentHight + 2, 0)));
-    // }
+    public void UpdateCurentHight()
+    {
+        curentHight = terrainManager.currentPosition.y;
+    }
 }

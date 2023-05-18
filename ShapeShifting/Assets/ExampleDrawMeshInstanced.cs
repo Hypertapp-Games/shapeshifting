@@ -15,7 +15,9 @@ public class ExampleDrawMeshInstanced : MonoBehaviour
              if (gameObject.transform.GetChild(i).GetComponent<MeshFilter>() != null)
              {
                  mesh.Add(gameObject.transform.GetChild(i).GetComponent<MeshFilter>().mesh);
+                 Destroy(gameObject.transform.GetChild(i).GetComponent<MeshFilter>());
                  material.Add(gameObject.transform.GetChild(i).GetComponent<MeshRenderer>().material);
+                 Destroy(gameObject.transform.GetChild(i).GetComponent<MeshRenderer>());
                  draw.Add(gameObject.transform.GetChild(i).gameObject);
              }
          }
