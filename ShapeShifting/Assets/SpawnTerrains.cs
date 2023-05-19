@@ -58,16 +58,22 @@ public class SpawnTerrains : MonoBehaviour
                     terran = Instantiate(terrainsData[whichTerrrain].terrain);
                     AnchorTerrain(terran,terrainsData[whichTerrrain].terrain.name);
                     i++;
+                    if (terrainsData[whichTerrrain].name == "Road Ob")
+                    {
+                        SpawnAttachObstacle(terran, terrainsData[whichTerrrain].attachObject[0]);
+                    }
+                    
+                    if (terrainsData[whichTerrrain].name == "Fly")
+                    {
+                        SpawnAttachTerrain(terrainsData[whichTerrrain].attachObject[0]);
+                    }
+                    
                     if (i > NumberPiece-1) // Neu spam du thi se spawm finish
                     {
                         break;
                     }
                 }
-
-                if (terrainsData[whichTerrrain].name == "Fly")
-                {
-                    SpawnAttachTerrain(terrainsData[whichTerrrain].attachObject[0]);
-                }
+                
                 if (terrainsData[whichTerrrain].maxCallTemp == 0) //Neu da spawm du so trong 1 lan thi khong spawm nua
                 {
                     terrainsData.Remove(terrainsData[whichTerrrain]);
@@ -114,5 +120,14 @@ public class SpawnTerrains : MonoBehaviour
             GameObject _attach = Instantiate(attach);
             AnchorTerrain(_attach, "attach");
         }
+    }
+    
+    public void SpawnAttachObstacle(GameObject terrain,GameObject obstacle)
+    {
+        Piece piece = terrain.GetComponent<Piece>();
+        float pos_x = Random.Range(piece.startPoint.transform.localToWorldMatrix.GetPosition().x, piece.endPoint.transform.localToWorldMatrix.GetPosition().x);
+        Vector3 spawmPos = new Vector3(pos_x, piece.startPoint.transform.localToWorldMatrix.GetPosition().y, piece.startPoint.transform.localToWorldMatrix.GetPosition().z);
+        GameObject _attach = Instantiate(obstacle,spawmPos,Quaternion.identity);
+        _attach.transform.parent = terrain.transform;
     }
 }

@@ -24,10 +24,16 @@ public class CarController : MonoBehaviour
     public float torqueSpeed = 600;
     public float setCarSpeed = 10;
     void Start()
-    {
+    {//1247.973
         carRb = GetComponent<Rigidbody>();
         carRb.centerOfMass = _centerOfMass;
-        
+    }
+
+    public void AddForce()
+    {
+        var vel = transform.InverseTransformDirection(this.GetComponent<Rigidbody>().velocity);
+        vel.z = setCarSpeed;
+        this.GetComponent<Rigidbody>().velocity = transform.TransformDirection(vel);
     }
 
     void Update()
@@ -48,6 +54,8 @@ public class CarController : MonoBehaviour
         if (vel.z > setCarSpeed) vel.z = setCarSpeed;
         else if (vel.z < -setCarSpeed) vel.z = -setCarSpeed;
         this.GetComponent<Rigidbody>().velocity = transform.TransformDirection(vel);
+        
+        
     }
 
 
@@ -67,8 +75,12 @@ public class CarController : MonoBehaviour
             Quaternion rot;
             Vector3 pos;
             wheel.wheelCollider.GetWorldPose(out pos, out rot);
-            wheel.wheelModel.transform.position = pos;
-            wheel.wheelModel.transform.rotation = rot;
+            if (wheel.wheelModel != null)
+            {
+                wheel.wheelModel.transform.position = pos;
+                wheel.wheelModel.transform.rotation = rot;
+            }
+         
         }
     }
 

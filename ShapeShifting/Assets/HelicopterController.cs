@@ -24,7 +24,7 @@ public class HelicopterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < curentHight + 2)
+        if (transform.position.y < curentHight + 1)
         {
             characterMove.gravity = 5;
         }
@@ -41,16 +41,17 @@ public class HelicopterController : MonoBehaviour
             Debug.Log(1);
             var piece = other.transform.parent.gameObject;
             characterMove.speed = 0;
-            // colisions = other.gameObject;
-            //curentHight = 0;
             var a = piece.GetComponent<Piece>().endPoint.transform.localToWorldMatrix.GetPosition();
             curentHight = a.y;
-            //StartCoroutine(FlyUp());
+        }
+
+        if (other.GetComponent<Obstacle>()!= null)
+        {
+            curentHight = other.transform.parent.GetComponent<Piece>().endPoint.transform.localToWorldMatrix
+                .GetPosition().y;
         }
         
-
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.name == "Road Up")
