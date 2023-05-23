@@ -266,7 +266,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3840659416274899846}
   - component: {fileID: 7711410359039070745}
-  - component: {fileID: 7692242618860431445}
   m_Layer: 0
   m_Name: Down Piece
   m_TagString: Untagged
@@ -309,18 +308,7 @@ MonoBehaviour:
   startPoint: {fileID: 1789915695602777255}
   endPoint: {fileID: 3550692390973137045}
   startPosition: {x: 0, y: 0, z: 0}
---- !u!114 &7692242618860431445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3808320960917971977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  PieceCode: 0
 --- !u!1 &6926275399306297919
 GameObject:
   m_ObjectHideFlags: 0

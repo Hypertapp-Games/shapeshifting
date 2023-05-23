@@ -6,36 +6,74 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer))]
 public class CombiningMeshes : MonoBehaviour
 {
-    
-    void Start()
+	public void Combining()
     {
-        StartCoroutine(Combining());
-    }
 
-    public IEnumerator Combining()
-    {
-        yield return new WaitForSeconds(0.1f);
+	    MeshFilter[] filters = GetComponentsInChildren<MeshFilter>();
         
-        MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>();
-        CombineInstance[] combine = new CombineInstance[meshFilters.Length];
-
-        int i = 1;
-        while (i < meshFilters.Length)
+        MeshRenderer[] renderers = GetComponentsInChildren<MeshRenderer>(); 
+        
+        List<Material> materials = new List<Material>();
+        foreach (MeshRenderer renderer in renderers)
         {
-            combine[i].mesh = meshFilters[i].sharedMesh;
-            combine[i].transform = meshFilters[i].transform.localToWorldMatrix;
-            //meshFilters[i].gameObject.SetActive(false);
-            var meshRenderer = meshFilters[i].gameObject.GetComponent<MeshRenderer>();
-            Destroy(meshRenderer);
-            Destroy(meshFilters[i]);
-            i++;
+            if (renderer.transform == transform)
+                continue;
+            Material[] localMats = renderer.sharedMaterials;
+            foreach (Material localMat in localMats)
+                if (!materials.Contains (localMat))
+                    materials.Add (localMat);
         }
+        List<CombineInstance> finalMeshCombineInstancesList = new List<CombineInstance>();
+        
 
-        Mesh mesh = new Mesh();
-        mesh.CombineMeshes(combine);
-        transform.GetComponent<MeshFilter>().sharedMesh = mesh;
-        transform.gameObject.SetActive(true);
+		for(int i = 0; i < materials.Count; i++) 
+		{
+			List<CombineInstance> submeshCombineInstancesList = new List<CombineInstance>();
+
+			for(int j = 0; j < filters.Length-1; j++) 
+			{
+				if(renderers[j+1] != null)
+				{
+					Material[] submeshMaterials = renderers[j+1].sharedMaterials;
+
+					for(int k = 0; k < submeshMaterials.Length; k++)
+					{
+						if(materials[i] == submeshMaterials[k])
+						{
+							CombineInstance combineInstance = new CombineInstance();
+							combineInstance.subMeshIndex = k; 
+							combineInstance.mesh = filters[j+1].sharedMesh;
+							combineInstance.transform = filters[j+1].transform.localToWorldMatrix;
+							submeshCombineInstancesList.Add(combineInstance);
+						}
+					}
+				}
+			}
+			Mesh submesh = new Mesh();
+			submesh.CombineMeshes(submeshCombineInstancesList.ToArray(), true);
+			CombineInstance finalCombineInstance = new CombineInstance();
+			finalCombineInstance.subMeshIndex = 0;
+			finalCombineInstance.mesh = submesh;
+			finalCombineInstance.transform = Matrix4x4.identity;
+			finalMeshCombineInstancesList.Add(finalCombineInstance);
+		}
+		renderers[0].sharedMaterials = materials.ToArray();
+
+        Mesh combinedMesh = new Mesh();
+        combinedMesh.CombineMeshes(finalMeshCombineInstancesList.ToArray(), false);
+        filters[0].sharedMesh = combinedMesh;
+        DeactivateCombinedGameObjects(filters);
+        
+    }
+    private void DeactivateCombinedGameObjects(MeshFilter[] meshFilters)
+    {
+	    for(int i = 0; i < meshFilters.Length-1; i++) 
+	    {
+		    Destroy(meshFilters[i+1].GetComponent<MeshRenderer>());
+		    Destroy(meshFilters[i+1]);
+	    }
     }
     
    
 }
+

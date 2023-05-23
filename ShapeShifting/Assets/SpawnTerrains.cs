@@ -81,6 +81,7 @@ public class SpawnTerrains : MonoBehaviour
                 
             }
         }
+        Terrains.gameObject.GetComponent<CombiningMeshes>().Combining();
     }
 
     public void AnchorTerrain( GameObject terran, string name)

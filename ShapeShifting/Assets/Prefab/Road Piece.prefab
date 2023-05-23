@@ -138,7 +138,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2048153593569714011}
   - component: {fileID: 4034564301942680907}
-  - component: {fileID: 5853862070441577812}
   m_Layer: 0
   m_Name: Road Piece
   m_TagString: Untagged
@@ -181,18 +180,7 @@ MonoBehaviour:
   startPoint: {fileID: 1758326205848251464}
   endPoint: {fileID: 3600431518766739578}
   startPosition: {x: 0, y: 0, z: 0}
---- !u!114 &5853862070441577812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2159929054982711508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  PieceCode: 0
 --- !u!1 &3414103770452382970
 GameObject:
   m_ObjectHideFlags: 0

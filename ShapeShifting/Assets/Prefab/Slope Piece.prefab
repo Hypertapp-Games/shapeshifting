@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1920384902086027746}
   - component: {fileID: 3546503243476900850}
-  - component: {fileID: 4043193268093310457}
   m_Layer: 0
   m_Name: Slope Piece
   m_TagString: Untagged
@@ -93,18 +92,7 @@ MonoBehaviour:
   startPoint: {fileID: 2210360792059845361}
   endPoint: {fileID: 3980441344912115395}
   startPosition: {x: 0, y: 0, z: 0}
---- !u!114 &4043193268093310457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1960067749367504493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  PieceCode: 0
 --- !u!1 &2149961955154499084
 GameObject:
   m_ObjectHideFlags: 0

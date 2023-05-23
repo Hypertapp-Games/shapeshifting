@@ -41,16 +41,16 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/Arcade_Car_Physics/Scripts/Ghost.cs" />
-     <Compile Include="Assets/Arcade_Car_Physics/Scripts/Trails/TrailEmitter.cs" />
-     <Compile Include="Assets/Arcade_Car_Physics/Scripts/WheelVehicle.cs" />
-     <Compile Include="Assets/Arcade_Car_Physics/Scripts/DemoScripts/CheckPointEvent.cs" />
-     <Compile Include="Assets/Arcade_Car_Physics/Scripts/Suspension.cs" />
      <Compile Include="Assets/Arcade_Car_Physics/Scripts/DemoScripts/CameraFollow.cs" />
-     <Compile Include="Assets/Arcade_Car_Physics/Scripts/DemoScripts/RaceTrackCheckpointsManager.cs" />
+     <Compile Include="Assets/Arcade_Car_Physics/Scripts/DemoScripts/CheckPointEvent.cs" />
      <Compile Include="Assets/Arcade_Car_Physics/Scripts/Trails/Trail.cs" />
-     <Compile Include="Assets/Arcade_Car_Physics/Scripts/EngineSoundManager.cs" />
+     <Compile Include="Assets/Arcade_Car_Physics/Scripts/Trails/TrailEmitter.cs" />
      <Compile Include="Assets/Arcade_Car_Physics/Scripts/VehicleInputs.cs" />
+     <Compile Include="Assets/Arcade_Car_Physics/Scripts/Suspension.cs" />
+     <Compile Include="Assets/Arcade_Car_Physics/Scripts/EngineSoundManager.cs" />
+     <Compile Include="Assets/Arcade_Car_Physics/Scripts/Ghost.cs" />
+     <Compile Include="Assets/Arcade_Car_Physics/Scripts/WheelVehicle.cs" />
+     <Compile Include="Assets/Arcade_Car_Physics/Scripts/DemoScripts/RaceTrackCheckpointsManager.cs" />
      <Folder Include="Assets/Arcade_Car_Physics/Scripts/DemoScripts" />
      <Folder Include="Assets/Arcade_Car_Physics/Scripts/Trails" />
      <None Include="Assets/Arcade_Car_Physics/Scripts/VehicleBehaviour.asmdef" />
@@ -709,11 +709,11 @@
      <Reference Include="mscorlib">
      <HintPath>/Applications/Unity/Hub/Editor/2021.3.24f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll</HintPath>
      </Reference>
-     <Reference Include="UnityEngine.UI">
-     <HintPath>/Users/mac/Downloads/shapeshifting/ShapeShifting/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-     </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>/Users/mac/Downloads/shapeshifting/ShapeShifting/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UI">
+     <HintPath>/Users/mac/Downloads/shapeshifting/ShapeShifting/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
