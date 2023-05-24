@@ -18,7 +18,7 @@ public class SpawnTerrains : MonoBehaviour
     int currentTerrainCod = 100;
     private void Start()
     {
-        SetUpTerrainsData();
+        //SetUpTerrainsData();
     }
 
     public void SetUpTerrainsData()

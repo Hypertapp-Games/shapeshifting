@@ -57,6 +57,8 @@
      <Compile Include="Assets/SpawnTerrains.cs" />
      <Compile Include="Assets/GameManager.cs" />
      <Compile Include="Assets/TerrainsData.cs" />
+     <Compile Include="Assets/VehicleData.cs" />
+     <Compile Include="Assets/UIManager.cs" />
      <Folder Include="Assets" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />

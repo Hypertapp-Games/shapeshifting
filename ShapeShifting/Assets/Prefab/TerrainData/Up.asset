@@ -15,6 +15,6 @@ MonoBehaviour:
   terrain: {fileID: 5817060041780299513, guid: 7e746c69dca5d4db09089c33eef80986, type: 3}
   terrainCod: 4
   maxInSuccesion: 3
-  maxCall: 2
+  maxCall: 4
   maxCallTemp: 0
   attachObject: []

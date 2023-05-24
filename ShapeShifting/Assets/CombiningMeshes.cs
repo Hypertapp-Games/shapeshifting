@@ -32,22 +32,26 @@ public class CombiningMeshes : MonoBehaviour
 
 			for(int j = 0; j < filters.Length-1; j++) 
 			{
-				if(renderers[j+1] != null)
+				if (filters[j + 1].GetComponent<Obstacle>() == null)
 				{
-					Material[] submeshMaterials = renderers[j+1].sharedMaterials;
-
-					for(int k = 0; k < submeshMaterials.Length; k++)
+					if(renderers[j+1] != null)
 					{
-						if(materials[i] == submeshMaterials[k])
+						Material[] submeshMaterials = renderers[j+1].sharedMaterials;
+
+						for(int k = 0; k < submeshMaterials.Length; k++)
 						{
-							CombineInstance combineInstance = new CombineInstance();
-							combineInstance.subMeshIndex = k; 
-							combineInstance.mesh = filters[j+1].sharedMesh;
-							combineInstance.transform = filters[j+1].transform.localToWorldMatrix;
-							submeshCombineInstancesList.Add(combineInstance);
+							if(materials[i] == submeshMaterials[k])
+							{
+								CombineInstance combineInstance = new CombineInstance();
+								combineInstance.subMeshIndex = k; 
+								combineInstance.mesh = filters[j+1].sharedMesh;
+								combineInstance.transform = filters[j+1].transform.localToWorldMatrix;
+								submeshCombineInstancesList.Add(combineInstance);
+							}
 						}
 					}
 				}
+				
 			}
 			Mesh submesh = new Mesh();
 			submesh.CombineMeshes(submeshCombineInstancesList.ToArray(), true);
@@ -67,10 +71,14 @@ public class CombiningMeshes : MonoBehaviour
     }
     private void DeactivateCombinedGameObjects(MeshFilter[] meshFilters)
     {
+	    
 	    for(int i = 0; i < meshFilters.Length-1; i++) 
 	    {
-		    Destroy(meshFilters[i+1].GetComponent<MeshRenderer>());
-		    Destroy(meshFilters[i+1]);
+		    if (meshFilters[i + 1].GetComponent<Obstacle>() == null)
+		    {
+			    Destroy(meshFilters[i+1].GetComponent<MeshRenderer>());
+			    Destroy(meshFilters[i+1]);	
+		    }
 	    }
     }
     

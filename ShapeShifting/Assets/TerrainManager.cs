@@ -9,7 +9,7 @@ public class TerrainManager : MonoBehaviour
     public int currentPiece = 0;
     void Start()
     {
-        UpdateCurrentPosition();
+        //UpdateCurrentPosition();
     }
 
     // Update is called once per frame
@@ -22,5 +22,15 @@ public class TerrainManager : MonoBehaviour
         var p = gameObject.transform.GetChild(currentPiece).GetComponent<Piece>().endPoint;
         currentPosition = p.transform.localToWorldMatrix.GetPosition();
         currentPiece++;
+    }
+
+    public bool CheckEnd()
+    {
+        if (currentPiece >= gameObject.transform.childCount)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
