@@ -31,4 +31,8 @@ public class CharacterMove : MonoBehaviour
          objectdirection =  objectdirection* speed + new Vector3(0, objectdirection.y + gravity * Time.deltaTime, 0);
          cc.Move(objectdirection);
     }
+    public void ChangeSpeed(float timeChange ,float _from, float _to)
+    {
+        StartCoroutine(timeChange.Tweeng(x => { speed = x; }, _from, _to));
+    }
 }

@@ -42,9 +42,12 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/FollowPlayer.cs" />
+     <Compile Include="Assets/VehicleData.cs" />
+     <Compile Include="Assets/UIManager.cs" />
      <Compile Include="Assets/TerrainManager.cs" />
      <Compile Include="Assets/PlayerManager.cs" />
      <Compile Include="Assets/Extns.cs" />
+     <Compile Include="Assets/AutoScrolling.cs" />
      <Compile Include="Assets/CombiningMeshes.cs" />
      <Compile Include="Assets/Piece.cs" />
      <Compile Include="Assets/GliderController.cs" />
@@ -57,8 +60,6 @@
      <Compile Include="Assets/SpawnTerrains.cs" />
      <Compile Include="Assets/GameManager.cs" />
      <Compile Include="Assets/TerrainsData.cs" />
-     <Compile Include="Assets/VehicleData.cs" />
-     <Compile Include="Assets/UIManager.cs" />
      <Folder Include="Assets" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
@@ -84,6 +85,7 @@
      <Folder Include="Assets/Arcade_Car_Physics/Sounds" />
      <Folder Include="Assets/Material/Color" />
      <Folder Include="Assets/Arcade_Car_Physics" />
+     <Folder Include="Assets/Resources" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" />
      <None Include="Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" />
@@ -108,6 +110,7 @@
      <Folder Include="Assets/TextMesh Pro/Documentation" />
      <Folder Include="Assets/Arcade_Car_Physics/DemoScene" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" />
+     <Folder Include="Assets/Resources/PNG" />
      <None Include="Assets/TextMesh Pro/Sprites/EmojiOne.json" />
      <Folder Include="Assets/Material" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" />

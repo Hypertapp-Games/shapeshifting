@@ -19,9 +19,8 @@ public class PlayerManager : MonoBehaviour
     
     SpawnTerrains _spawnTerrains;
     private UIManager _uiManager;
-
-    [Header("Button Text")] 
-    public List<TMP_Text> Button = new List<TMP_Text>();
+    private bool IsStart = false;
+    
 
     void Start()
     {
@@ -29,6 +28,15 @@ public class PlayerManager : MonoBehaviour
         _spawnTerrains = gameObject.GetComponent<SpawnTerrains>();
         Cam.player = currentVehicle;
         RandomVehicleUseLevel();
+        StartCoroutine(StartGame());
+    }
+
+    IEnumerator StartGame()
+    {
+        yield return new WaitForSeconds(2.3f);
+        IsStart = true;
+        currentVehicle.GetComponent<CharacterMove>().enabled = true;
+
     }
 
     // Update is called once per frame
@@ -74,7 +82,7 @@ public class PlayerManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             GameObject vhc = AllVehicle[Random.Range(0, AllVehicle.Count)];
-            Button[i].text = vhc.name;
+            _uiManager.AutoScroll(vhc.name,i);
             Vehicle.Add(vhc);
              List<TerrainsData> cpd = vhc.GetComponent<VehicleData>().Corresponding;
              for (int j = 0; j < cpd.Count; j++)
@@ -83,7 +91,6 @@ public class PlayerManager : MonoBehaviour
              }
             AllVehicle.Remove(vhc);
         }
-        //var temp = ;
         _spawnTerrains.terrainsData = temptr.Distinct().ToList();
         _spawnTerrains.SetUpTerrainsData();
         terrainManager.UpdateCurrentPosition();
@@ -93,18 +100,28 @@ public class PlayerManager : MonoBehaviour
 
     public void Vehicle0()
     {
-        choseVehicle = Vehicle[0];
-        SwapVehicle();
+        if (IsStart)
+        {
+            choseVehicle = Vehicle[0];
+            SwapVehicle();
+        }
+       
     }
     public void Vehicle1()
     {
-        choseVehicle = Vehicle[1];
-        SwapVehicle();
+        if (IsStart)
+        {
+            choseVehicle = Vehicle[1];
+            SwapVehicle();
+        }
     }
     public void Vehicle2()
     {
-        choseVehicle = Vehicle[2];
-        SwapVehicle();
+        if (IsStart)
+        {
+            choseVehicle = Vehicle[2];
+            SwapVehicle();
+        }
     }
     
     // public void Vehicle3()

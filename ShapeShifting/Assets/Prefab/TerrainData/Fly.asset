@@ -19,3 +19,4 @@ MonoBehaviour:
   maxCallTemp: 0
   attachObject:
   - {fileID: 3808320960917971977, guid: 457766dab933a445da58072bbcd6e412, type: 3}
+  VehicleCode: 1

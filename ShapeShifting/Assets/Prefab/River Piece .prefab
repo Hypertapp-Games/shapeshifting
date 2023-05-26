@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2989196553042181333}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -8.77}
-  m_LocalScale: {x: 8.765598, y: 0.5, z: 8.765598}
+  m_LocalScale: {x: 17, y: 0.5, z: 8.765598}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8946422417431489900}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 393124008244718066}
   - component: {fileID: 6237882502263016588}
   m_Layer: 0
-  m_Name: Road
+  m_Name: River
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,8 +124,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5703182570562463437}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8.765598, y: 0.5, z: 8.765598}
+  m_LocalPosition: {x: 0, y: -0.21, z: 0}
+  m_LocalScale: {x: 17, y: 0.5, z: 8.765598}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8946422417431489900}
@@ -218,7 +218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5887293767790608973}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.388, y: 0.029999971, z: 0.01999998}
+  m_LocalPosition: {x: 8.505, y: 0.029999971, z: 0.01999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -249,7 +249,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8656559777811897983}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.388, y: 0.029999971, z: 0.01999998}
+  m_LocalPosition: {x: -8.496, y: 0.029999971, z: 0.01999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -284,7 +284,7 @@ Transform:
   m_GameObject: {fileID: 8888050869679067778}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 8.73}
-  m_LocalScale: {x: 8.765598, y: 0.5, z: 8.765598}
+  m_LocalScale: {x: 17, y: 0.5, z: 8.765598}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8946422417431489900}

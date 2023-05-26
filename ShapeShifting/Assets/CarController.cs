@@ -83,5 +83,9 @@ public class CarController : MonoBehaviour
          
         }
     }
+    public void ChangeSpeed(float timeChange ,float _from, float _to)
+    {
+        StartCoroutine(timeChange.Tweeng(x => { setCarSpeed = x; }, _from, _to));
+    }
 
 }

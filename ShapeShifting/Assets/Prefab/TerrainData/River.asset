@@ -16,5 +16,6 @@ MonoBehaviour:
   terrainCod: 4
   maxInSuccesion: 3
   maxCall: 2
-  maxCallTemp: 1
+  maxCallTemp: 0
   attachObject: []
+  VehicleCode: 2

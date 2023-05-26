@@ -18,3 +18,4 @@ MonoBehaviour:
   maxCall: 3
   maxCallTemp: 0
   attachObject: []
+  VehicleCode: 1
