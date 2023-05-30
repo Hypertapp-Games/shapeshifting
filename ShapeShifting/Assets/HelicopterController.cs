@@ -6,19 +6,16 @@ using UnityEngine;
 public class HelicopterController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float curentHight = 0;
-    public GameObject colisions;
-    public CharacterMove characterMove;
-    private float temp;
-    public TerrainManager terrainManager;
+    [HideInInspector]public float curentHight = 0;
+    [HideInInspector] public CharacterMove characterMove;
+    [HideInInspector] public float temp;
+    public PlayerManager playerManager;
 
 
     void Start()
     {
-        characterMove = this.GetComponent<CharacterMove>();
+        characterMove = GetComponent<CharacterMove>();
         temp = characterMove.speed;
-        UpdateCurentHight();
-        //StartCoroutine(FlyUp());
     }
 
     // Update is called once per frame
@@ -62,6 +59,6 @@ public class HelicopterController : MonoBehaviour
     public void UpdateCurentHight()
     {
         characterMove.speed = 0.05f;
-        curentHight = terrainManager.currentPosition.y;
+        curentHight = playerManager.currentPosition.y;
     }
 }

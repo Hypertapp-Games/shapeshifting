@@ -6,7 +6,7 @@ using UnityEngine;
 public class TerrainsData : ScriptableObject
 {
     public GameObject terrain;
-    public int terrainCod;
+    public int terrainCode;
     public int maxInSuccesion;
     public int maxCall;
     [HideInInspector]public int maxCallTemp;

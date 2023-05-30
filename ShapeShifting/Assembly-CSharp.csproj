@@ -44,7 +44,6 @@
      <Compile Include="Assets/FollowPlayer.cs" />
      <Compile Include="Assets/VehicleData.cs" />
      <Compile Include="Assets/UIManager.cs" />
-     <Compile Include="Assets/TerrainManager.cs" />
      <Compile Include="Assets/PlayerManager.cs" />
      <Compile Include="Assets/Extns.cs" />
      <Compile Include="Assets/AutoScrolling.cs" />
@@ -74,6 +73,7 @@
      <Folder Include="Assets/TextMesh Pro/Resources/Fonts &amp; Materials" />
      <Folder Include="Assets/Prefab/TerrainData" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
+     <Folder Include="Assets/Prefab/Vehicle" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
      <Folder Include="Assets/TextMesh Pro/Resources" />
      <None Include="Assets/Arcade_Car_Physics/Skybox Gradient.shader" />
@@ -100,6 +100,7 @@
      <Folder Include="Assets/TextMesh Pro/Fonts" />
      <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
      <None Include="Assets/Material/Shader/SimpleSurfaceShader.shader" />
+     <Folder Include="Assets/Prefab/Terrain" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />

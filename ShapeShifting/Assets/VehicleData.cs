@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class VehicleData : MonoBehaviour
 {
-    public List<TerrainsData> Corresponding = new List<TerrainsData>();
+    public List<TerrainsData> TerrainCorresponding = new List<TerrainsData>();
     public int CorrespondingCode;
     public bool isGroundVehicle;
     public float normalspeed;
@@ -18,7 +18,7 @@ public class VehicleData : MonoBehaviour
     public int checkChangeCCCode = 0;
     private void Start()
     {
-        CorrespondingCode = Corresponding[0].VehicleCode;
+        CorrespondingCode = TerrainCorresponding[0].VehicleCode;
     }
 
     private void FixedUpdate()
@@ -32,7 +32,7 @@ public class VehicleData : MonoBehaviour
                 {
                     CurrentCorrespondingCode = Int32.Parse(hit.transform.gameObject.name); 
                 }
-                catch (Exception e)
+                catch (Exception )
                 {
                     CurrentCorrespondingCode = 100;
                 }
@@ -52,7 +52,6 @@ public class VehicleData : MonoBehaviour
                 }
                 else if (gameObject.GetComponent<CarController>() != null)
                 {
-                    Debug.Log(1);
                     gameObject.GetComponent<CarController>().ChangeSpeed(timeChange, slowspeed, normalspeed);
                 }
             }
@@ -64,8 +63,7 @@ public class VehicleData : MonoBehaviour
                     gameObject.GetComponent<CharacterMove>().ChangeSpeed(timeChange, normalspeed,slowspeed);
                 }
                 else if (gameObject.GetComponent<CarController>() != null)
-                { 
-                    Debug.Log(2);
+                {
                     gameObject.GetComponent<CarController>().ChangeSpeed(timeChange, normalspeed,slowspeed);
                 }
             }

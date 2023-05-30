@@ -109,7 +109,7 @@ public class SpawnTerrains : MonoBehaviour
         else
         {
             int whichTerrrain = Random.Range(0, terrainsData.Count);
-            int terrainCod = terrainsData[whichTerrrain].terrainCod;
+            int terrainCod = terrainsData[whichTerrrain].terrainCode;
             if (terrainCod  != currentTerrainCod)
             {
                 currentTerrainCod = terrainCod;
