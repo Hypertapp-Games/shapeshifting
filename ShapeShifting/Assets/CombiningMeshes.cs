@@ -32,7 +32,7 @@ public class CombiningMeshes : MonoBehaviour
 
 			for(int j = 0; j < filters.Length-1; j++) 
 			{
-				if (filters[j + 1].GetComponent<Obstacle>() == null)
+				if (filters[j + 1].name != "Ob")
 				{
 					if(renderers[j+1] != null)
 					{
@@ -74,7 +74,7 @@ public class CombiningMeshes : MonoBehaviour
 	    
 	    for(int i = 0; i < meshFilters.Length-1; i++) 
 	    {
-		    if (meshFilters[i + 1].GetComponent<Obstacle>() == null)
+		    if (meshFilters[i + 1].name != "Ob")
 		    {
 			    Destroy(meshFilters[i+1].GetComponent<MeshRenderer>());
 			    Destroy(meshFilters[i+1]);	

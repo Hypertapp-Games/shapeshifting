@@ -179,14 +179,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TerrainCorresponding:
+  terrainCorresponding:
   - {fileID: 11400000, guid: 46c1e38c71dc84cdfa9edf778da23fbd, type: 2}
-  CorrespondingCode: 0
+  - {fileID: 11400000, guid: 32c6b98cbc5b24819bd5fd0f8f819307, type: 2}
   isGroundVehicle: 0
   normalspeed: 0
   slowspeed: 0
-  timeChange: 0.1
+  timeChangeSpeed: 0.1
   cast: {fileID: 0}
   maxDistancecast: 1
-  CurrentCorrespondingCode: 0
-  checkChangeCCCode: 0

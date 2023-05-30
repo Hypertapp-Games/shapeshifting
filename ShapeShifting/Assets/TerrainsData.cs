@@ -11,5 +11,5 @@ public class TerrainsData : ScriptableObject
     public int maxCall;
     [HideInInspector]public int maxCallTemp;
     public List<GameObject> attachObject = new List<GameObject>();
-    public int VehicleCode;
+    public int terrainType;
 }

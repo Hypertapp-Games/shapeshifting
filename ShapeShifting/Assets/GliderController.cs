@@ -29,6 +29,7 @@ public class GliderController : MonoBehaviour
         {
             characterMove.gravity = gravityNotFly;
             characterMove.speed = speedNotFly;
+            GetComponentInParent<PlayerManager>().isFlying = false;
         }
         else
         {

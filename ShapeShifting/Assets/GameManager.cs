@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
                 allPlayer[j].prefabVehicles.Add(vhc);
             }
             
-            List<TerrainsData> cpd = vhc.GetComponent<VehicleData>().TerrainCorresponding;
+            List<TerrainsData> cpd = vhc.GetComponent<VehicleData>().terrainCorresponding;
             
             for (int j = 0; j < cpd.Count; j++)
             {

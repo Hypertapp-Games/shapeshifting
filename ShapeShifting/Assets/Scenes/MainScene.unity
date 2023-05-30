@@ -655,16 +655,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TerrainCorresponding: []
-  CorrespondingCode: 0
+  terrainCorresponding: []
   isGroundVehicle: 0
   normalspeed: 0
   slowspeed: 0
-  timeChange: 0.1
+  timeChangeSpeed: 0.1
   cast: {fileID: 0}
   maxDistancecast: 1
-  CurrentCorrespondingCode: 0
-  checkChangeCCCode: 0
 --- !u!1 &215541628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,6 +1141,147 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 756872690}
+--- !u!1 &431148833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 431148839}
+  - component: {fileID: 431148838}
+  - component: {fileID: 431148837}
+  - component: {fileID: 431148836}
+  - component: {fileID: 431148835}
+  - component: {fileID: 431148834}
+  m_Layer: 0
+  m_Name: Human
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &431148834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431148833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrainCorresponding:
+  - {fileID: 11400000, guid: b4bbfe61495484b3f928099fb0bd6ddb, type: 2}
+  - {fileID: 11400000, guid: 5041c649dd0ec4f8995ade1b5b23acf9, type: 2}
+  isGroundVehicle: 1
+  normalspeed: 0.1
+  slowspeed: 0.01
+  timeChangeSpeed: 0.1
+  cast: {fileID: 1069356883}
+  maxDistancecast: 0.5
+--- !u!114 &431148835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431148833}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1ea559302ac4a349236cf840010e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
+  gravity: -10
+  cc: {fileID: 0}
+--- !u!143 &431148836
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431148833}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0
+  m_Radius: 0.6
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.0001
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &431148837
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431148833}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9ddd62fc72946494d9cf7bbf3e905abb, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &431148838
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431148833}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &431148839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431148833}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1069356884}
+  m_Father: {fileID: 1771811645}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &487853404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,6 +1680,7 @@ MonoBehaviour:
   - {fileID: 5842704898907610187, guid: e59fe1eb1adeb4ffeaafe968c5d1b786, type: 3}
   allPlayer:
   - {fileID: 953366259}
+  - {fileID: 1771811644}
   _uiManager: {fileID: 0}
   _spawnTerrains: {fileID: 0}
 --- !u!4 &640729669
@@ -1836,18 +1975,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TerrainCorresponding:
+  terrainCorresponding:
   - {fileID: 11400000, guid: b4bbfe61495484b3f928099fb0bd6ddb, type: 2}
   - {fileID: 11400000, guid: 5041c649dd0ec4f8995ade1b5b23acf9, type: 2}
-  CorrespondingCode: 0
   isGroundVehicle: 1
   normalspeed: 0.1
   slowspeed: 0.01
-  timeChange: 0.1
+  timeChangeSpeed: 0.1
   cast: {fileID: 693885980}
   maxDistancecast: 0.5
-  CurrentCorrespondingCode: 0
-  checkChangeCCCode: 0
 --- !u!1 &847409421
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,6 +2342,7 @@ MonoBehaviour:
   currentPosition: {x: 0, y: 0, z: 0}
   currentPiece: 0
   currentVehiclePosition: {x: 0, y: 0, z: 0}
+  currentTerrain: {fileID: 0}
 --- !u!4 &953366260
 Transform:
   m_ObjectHideFlags: 0
@@ -2691,6 +2828,37 @@ Transform:
   m_Father: {fileID: 4510004954695607366}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1069356883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1069356884}
+  m_Layer: 0
+  m_Name: cast
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1069356884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069356883}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: -0, z: 0.435}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 431148839}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &1087951792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4089,16 +4257,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TerrainCorresponding: []
-  CorrespondingCode: 0
+  terrainCorresponding: []
   isGroundVehicle: 0
   normalspeed: 0
   slowspeed: 0
-  timeChange: 0.1
+  timeChangeSpeed: 0.1
   cast: {fileID: 0}
   maxDistancecast: 1
-  CurrentCorrespondingCode: 0
-  checkChangeCCCode: 0
 --- !u!1 &1643697581
 GameObject:
   m_ObjectHideFlags: 0
@@ -4414,6 +4579,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769163047}
   m_Mesh: {fileID: -2432090755550338912, guid: 2bdb67dd109374a0cb46d1c3f285d23d, type: 3}
+--- !u!1 &1771811643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1771811645}
+  - component: {fileID: 1771811644}
+  m_Layer: 0
+  m_Name: Bot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1771811644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771811643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9dde250b2b98864ba87f4507269cf0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 640729668}
+  prefabVehicles: []
+  vehicle: []
+  currentVehicle: {fileID: 431148833}
+  choseVehicle: {fileID: 431148833}
+  cam: {fileID: 422541975}
+  isPlayer: 0
+  terrainManager: {fileID: 1428946159}
+  currentPosition: {x: 0, y: 0, z: 0}
+  currentPiece: 0
+  currentVehiclePosition: {x: 0, y: 0, z: 0}
+  currentTerrain: {fileID: 0}
+--- !u!4 &1771811645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771811643}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.26, y: 0.473, z: -1.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 431148839}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1785264507
 GameObject:
   m_ObjectHideFlags: 0
@@ -4840,16 +5062,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TerrainCorresponding: []
-  CorrespondingCode: 0
+  terrainCorresponding: []
   isGroundVehicle: 1
   normalspeed: 0.15
   slowspeed: 0
-  timeChange: 0
+  timeChangeSpeed: 0.1
   cast: {fileID: 856629435}
   maxDistancecast: 0.3
-  CurrentCorrespondingCode: 0
-  checkChangeCCCode: 0
 --- !u!114 &2025654978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5994,16 +6213,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TerrainCorresponding: []
-  CorrespondingCode: 0
+  terrainCorresponding: []
   isGroundVehicle: 1
   normalspeed: 8
   slowspeed: 1
-  timeChange: 0.1
+  timeChangeSpeed: 0.1
   cast: {fileID: 1107340068}
   maxDistancecast: 0.5
-  CurrentCorrespondingCode: 0
-  checkChangeCCCode: 0
 --- !u!4 &4928145383793318593
 Transform:
   m_ObjectHideFlags: 0
@@ -6602,16 +6818,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TerrainCorresponding: []
-  CorrespondingCode: 0
+  terrainCorresponding: []
   isGroundVehicle: 1
   normalspeed: 4
   slowspeed: 0.5
-  timeChange: 0.1
+  timeChangeSpeed: 0.1
   cast: {fileID: 1785264507}
   maxDistancecast: 0.5
-  CurrentCorrespondingCode: 0
-  checkChangeCCCode: 0
 --- !u!4 &4966114749596261343
 Transform:
   m_ObjectHideFlags: 0

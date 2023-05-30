@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Slope
   m_EditorClassIdentifier: 
   terrain: {fileID: 1960067749367504493, guid: e8f3398e2064742d98b5927a3201cad9, type: 3}
-  terrainCod: 3
+  terrainCode: 0
   maxInSuccesion: 1
   maxCall: 3
   maxCallTemp: 0
   attachObject: []
-  VehicleCode: 1
+  terrainType: 1

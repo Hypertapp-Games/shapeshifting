@@ -11,6 +11,7 @@ public class Piece : MonoBehaviour
     public Vector3 startPosition;
 
     public int PieceCode;
+    public List<GameObject> vehicleCanMoveIn = new List<GameObject>();
     void Awake()
     {
         startPosition = startPoint.transform.localToWorldMatrix.GetPosition();

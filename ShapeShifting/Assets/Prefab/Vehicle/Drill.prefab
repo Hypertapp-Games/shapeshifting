@@ -674,18 +674,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TerrainCorresponding:
+  terrainCorresponding:
   - {fileID: 11400000, guid: 32c6b98cbc5b24819bd5fd0f8f819307, type: 2}
   - {fileID: 11400000, guid: b4bbfe61495484b3f928099fb0bd6ddb, type: 2}
-  CorrespondingCode: 0
   isGroundVehicle: 1
   normalspeed: 4
   slowspeed: 0.5
-  timeChange: 0.1
+  timeChangeSpeed: 0.1
   cast: {fileID: 4631789496432051104}
   maxDistancecast: 0.5
-  CurrentCorrespondingCode: 0
-  checkChangeCCCode: 0
 --- !u!1 &300417658803991848
 GameObject:
   m_ObjectHideFlags: 0

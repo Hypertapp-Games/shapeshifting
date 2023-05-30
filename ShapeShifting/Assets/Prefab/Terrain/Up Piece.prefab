@@ -150,6 +150,8 @@ MonoBehaviour:
   endPoint: {fileID: 8985956837716336215}
   startPosition: {x: 0, y: 0, z: 0}
   PieceCode: 0
+  vehicleCanMoveIn:
+  - {fileID: 2089821383966912001, guid: 68cdca19fb6284c42bee02939473a4bf, type: 3}
 --- !u!1 &6135328896230179429
 GameObject:
   m_ObjectHideFlags: 0

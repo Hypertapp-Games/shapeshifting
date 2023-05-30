@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Road
   m_EditorClassIdentifier: 
   terrain: {fileID: 2159929054982711508, guid: 6d734644ad7134ff6a582522ddde594d, type: 3}
-  terrainCod: 1
+  terrainCode: 5
   maxInSuccesion: 4
   maxCall: 100
   maxCallTemp: 94
   attachObject: []
-  VehicleCode: 1
+  terrainType: 1

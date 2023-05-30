@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Road Ob
   m_EditorClassIdentifier: 
   terrain: {fileID: 2159929054982711508, guid: 6d734644ad7134ff6a582522ddde594d, type: 3}
-  terrainCod: 100
+  terrainCode: 0
   maxInSuccesion: 2
   maxCall: 4
-  maxCallTemp: 2
+  maxCallTemp: 1
   attachObject:
   - {fileID: 5404357956329465893, guid: 1fb799ad2c1fe4cbc998382e9f89acbc, type: 3}
-  VehicleCode: 1
+  terrainType: 1

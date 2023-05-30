@@ -406,3 +406,5 @@ MonoBehaviour:
   endPoint: {fileID: 5887293767790608973}
   startPosition: {x: 0, y: 0, z: 0}
   PieceCode: 0
+  vehicleCanMoveIn:
+  - {fileID: 5876435289128598214, guid: d7ce12a978f8d423dabbf9e0ad961365, type: 3}

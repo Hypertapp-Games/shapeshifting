@@ -8,7 +8,7 @@ public class DrillController : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Obstacle>() != null)
+        if (other.gameObject.name == "Ob")
         {
             other.gameObject.transform.localScale = new Vector3(3f, 3f, 3f);
             //StartCoroutine(0.1f.Tweeng((p) => other.gameObject.transform.localScale = p , other.gameObject.transform.localScale,  new Vector3(3f, 3f, 3f)));

@@ -58,11 +58,11 @@ public class SpawnTerrains : MonoBehaviour
                     terran = Instantiate(terrainsData[whichTerrrain].terrain);
                     
                     AnchorTerrain(terran,terrainsData[whichTerrrain].terrain.name);
-                    if (terrainsData[whichTerrrain].VehicleCode != 0)
+                    if (terrainsData[whichTerrrain].terrainType != 0)
                     {
                         for (int k = 0; k < terran.transform.childCount; k++)
                         {
-                            terran.transform.GetChild(k).name = terrainsData[whichTerrrain].VehicleCode.ToString();
+                            terran.transform.GetChild(k).name = terrainsData[whichTerrrain].terrainType.ToString();
                         }
                     }
                    
@@ -74,7 +74,7 @@ public class SpawnTerrains : MonoBehaviour
                     
                     if (terrainsData[whichTerrrain].name == "Fly")
                     {
-                        SpawnAttachTerrain(terrainsData[whichTerrrain].attachObject[0]);
+                        SpawnAttachTerrain(terran,terrainsData[whichTerrrain].attachObject[0]);
                     }
                     
                     if (i > NumberPiece-1) // Neu spam du thi se spawm finish
@@ -123,12 +123,13 @@ public class SpawnTerrains : MonoBehaviour
        
     }
 
-    public void SpawnAttachTerrain(GameObject attach)
+    public void SpawnAttachTerrain(GameObject terrain,GameObject attach)
     {
         for (int i = 1; i <= Random.Range(2,4); i++)
         {
             GameObject _attach = Instantiate(attach);
             AnchorTerrain(_attach, "attach");
+            _attach.transform.parent = terrain.transform;
         }
     }
     

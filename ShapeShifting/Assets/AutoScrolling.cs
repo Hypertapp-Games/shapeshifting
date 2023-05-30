@@ -66,9 +66,6 @@ public class AutoScrolling : MonoBehaviour
 
     public void SetUp()
     {
-        // distance = gameObject.transform.GetChild(0).transform.position.y -
-        //            gameObject.transform.GetChild(1).transform.position.y;
-        // maxDistance = gameObject.transform.GetChild(0).transform.position.y + distance;
         for (int i = 0; i < transform.childCount; i++)
         {
             CheckList.Add(gameObject.transform.GetChild(i).gameObject);

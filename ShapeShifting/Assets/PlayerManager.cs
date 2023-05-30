@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = System.Random;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -23,8 +25,16 @@ public class PlayerManager : MonoBehaviour
     [Header("InMap")]
     public GameObject terrainManager;
     [HideInInspector]public Vector3 currentPosition = new Vector3(0,0,0);
-    [HideInInspector]public int currentPiece = 0;
+    [SerializeField]public int currentPiece = 0;
     [HideInInspector] public Vector3 currentVehiclePosition;
+    
+    public GameObject currentTerrain;
+    public  Piece piece;
+    private Vector3 positionInFrames;
+    private Vector3 noMovementFrames;
+    public float timeNoMovement = 0;
+    public bool isFlying = false;
+    
 
     void Start()
     {
@@ -33,6 +43,7 @@ public class PlayerManager : MonoBehaviour
             cam.player = currentVehicle;
         }
         StartCoroutine(StartGame());
+        
     }
 
     IEnumerator StartGame()
@@ -40,23 +51,60 @@ public class PlayerManager : MonoBehaviour
         yield return new WaitForSeconds(2.3f);
         _isStart = true;
         currentVehicle.GetComponent<CharacterMove>().enabled = true;
+        StartCoroutine(CheckNoMovement());
 
     }
 
     public void Update()
     {
-        currentVehiclePosition = currentVehicle.transform.localToWorldMatrix.GetPosition();
-        if (currentVehiclePosition.x > currentPosition.x)
+        if (_isStart)
         {
-            UpdateCurrentPosition();
-            if (currentVehicle.GetComponent<HelicopterController>() != null)
+            currentVehiclePosition = currentVehicle.transform.localToWorldMatrix.GetPosition();
+            if (currentVehiclePosition.x > currentPosition.x)
             {
-                currentVehicle.GetComponent<HelicopterController>().UpdateCurentHight();
+                UpdateCurrentPosition();
+                if (currentVehicle.GetComponent<HelicopterController>() != null)
+                {
+                    currentVehicle.GetComponent<HelicopterController>().UpdateCurentHight();
+                }
+                if (CheckEnd() && isPlayer)
+                {
+                    gameManager._uiManager.EndGame();
+                    cam.enabled = false;
+                }
             }
-            if (CheckEnd() && isPlayer)
+        }
+    }
+
+    public IEnumerator CheckNoMovement()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.1f);
+            if (!isPlayer)
             {
-                gameManager._uiManager.EndGame();
-                cam.enabled = false;
+                positionInFrames = currentVehicle.gameObject.transform.localToWorldMatrix.GetPosition();
+                double x = Math.Round(positionInFrames.x, 2);
+                double y = Math.Round(positionInFrames.y, 2);
+                double z = Math.Round(positionInFrames.z, 2);
+                positionInFrames= new Vector3((float)x, (float)y, (float)z);
+                if (noMovementFrames != positionInFrames)
+                {
+                    noMovementFrames = positionInFrames;
+                    timeNoMovement = 0;
+                }
+                else
+                {
+                    Debug.Log(1);
+                    timeNoMovement += 0.1f;
+                }
+
+                if (timeNoMovement >= 2)
+                {
+                    currentTerrain = terrainManager.transform.GetChild(currentPiece).gameObject;
+                    AutoChangeVehicle();
+                    timeNoMovement = 0;
+                }
             }
         }
     }
@@ -65,6 +113,83 @@ public class PlayerManager : MonoBehaviour
         var p = terrainManager.transform.GetChild(currentPiece).GetComponent<Piece>().endPoint;
         currentPosition = p.transform.localToWorldMatrix.GetPosition();
         currentPiece++;
+        currentTerrain = terrainManager.transform.GetChild(currentPiece -1 ).gameObject;
+        if (!isPlayer)
+        {
+            if (!isFlying)
+            {
+                AutoChangeVehicle();
+            }
+            else
+            {
+                for (int i = 0; i < vehicle.Count; i++)
+                {
+                    if (vehicle[i].name == "Glide")
+                    {
+                        choseVehicle = vehicle[i];
+                        SwapVehicle();
+                    }
+                }
+            }
+        }
+    }
+
+    public void AutoChangeVehicle()
+    {
+        Debug.Log("AutoChangeVehicle");
+        if (currentTerrain.GetComponentInChildren<Obstacle>() != null)
+        {
+            Debug.Log(currentTerrain.GetComponentInChildren<Obstacle>().name);
+            piece = currentTerrain.GetComponentInChildren<Obstacle>().gameObject.GetComponent<Piece>();
+        }
+        else
+        {
+            piece = currentTerrain.GetComponent<Piece>();
+        }
+
+        CheckVehicle();
+        
+        
+  
+    }
+
+    public void CheckVehicle()
+    {
+        for (int i = 0; i < piece.vehicleCanMoveIn.Count; i++)
+        {
+            for (int j = 0; j < vehicle.Count; j++)
+            {
+                if (vehicle[j].name == piece.vehicleCanMoveIn[i].name)
+                {
+                    Debug.Log(vehicle[j].name);
+                    if (piece.name == "Fly Piece")
+                    {
+                        choseVehicle = vehicle[j];
+                        SwapVehicle();
+                        Debug.Log("StartFly");
+                        isFlying = true;
+                    }
+                    else
+                    {
+                        BotSwapVehicle(j);  
+                    }
+                    return;
+                }
+            }
+        }
+    }
+    
+    public void BotSwapVehicle(int index)
+    {
+        StartCoroutine(_BotSwapVehicle(index));
+    }
+
+    public IEnumerator _BotSwapVehicle(int index)
+    {
+        float t = UnityEngine.Random.Range(0.7f, 1.3f);
+        yield return new WaitForSeconds(t);
+        choseVehicle = vehicle[index];
+        SwapVehicle();
     }
     public bool CheckEnd()
     {
@@ -87,6 +212,7 @@ public class PlayerManager : MonoBehaviour
             {
                var vhc= Instantiate(prefabVehicles[i], currentVehicle.transform.localToWorldMatrix.GetPosition(),
                     currentVehicle.transform.rotation);
+               vhc.name = prefabVehicles[i].name;
                vhc.gameObject.SetActive(false);
                vhc.transform.SetParent(gameObject.transform);
                vehicle.Add(vhc);
@@ -125,21 +251,29 @@ public class PlayerManager : MonoBehaviour
     
     public void SwapVehicle()
     {
-        choseVehicle.transform.position = currentVehicle.transform.localToWorldMatrix.GetPosition();
-        currentVehicle.gameObject.SetActive(false);
-        currentVehicle = choseVehicle;
-        if (currentVehicle.GetComponent<CarController>() != null)
+        if (currentVehicle != choseVehicle)
         {
-            currentVehicle.GetComponent<CarController>().AddForce();
-        }
-        currentVehicle.transform.eulerAngles = new Vector3(0,90,0);
-        currentVehicle.gameObject.SetActive(true);
+            choseVehicle.transform.position = currentVehicle.transform.localToWorldMatrix.GetPosition();
+            currentVehicle.gameObject.SetActive(false);
+            currentVehicle = choseVehicle;
+            if (currentVehicle.GetComponent<CarController>() != null)
+            {
+                currentVehicle.GetComponent<CarController>().AddForce();
+            }
+            currentVehicle.transform.eulerAngles = new Vector3(0,90,0);
+            currentVehicle.gameObject.SetActive(true);
 
-        if (currentVehicle.GetComponent<HelicopterController>()!= null)
-        {
-            currentVehicle.GetComponent<HelicopterController>().UpdateCurentHight();
+            if (currentVehicle.GetComponent<HelicopterController>()!= null)
+            {
+                currentVehicle.GetComponent<HelicopterController>().UpdateCurentHight();
+            }
+
+            if (isPlayer)
+            {
+                cam.player = currentVehicle;
+            }
         }
-        cam.player = currentVehicle;
+        
     }
     
     // public IEnumerator ThisUpdateCurrentPosition()

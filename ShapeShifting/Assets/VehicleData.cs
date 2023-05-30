@@ -3,22 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class VehicleData : MonoBehaviour
 {
-    public List<TerrainsData> TerrainCorresponding = new List<TerrainsData>();
-    public int CorrespondingCode;
+    public List<TerrainsData> terrainCorresponding = new List<TerrainsData>();
     public bool isGroundVehicle;
     public float normalspeed;
     public float slowspeed;
-    public float timeChange = 0.1f;
+    public float timeChangeSpeed = 0.1f;
     public GameObject cast;
     public float maxDistancecast = 1;
-    public int CurrentCorrespondingCode = 0;
-    public int checkChangeCCCode = 0;
+    int _terrainType;
+    int _terrainTypeRealTime = 0;
+    int _currentTerrainType = 0;
     private void Start()
     {
-        CorrespondingCode = TerrainCorresponding[0].VehicleCode;
+        _terrainType = terrainCorresponding[0].terrainType;
     }
 
     private void FixedUpdate()
@@ -30,41 +31,39 @@ public class VehicleData : MonoBehaviour
             {
                 try
                 {
-                    CurrentCorrespondingCode = Int32.Parse(hit.transform.gameObject.name); 
+                    _terrainTypeRealTime = Int32.Parse(hit.transform.gameObject.name); 
                 }
                 catch (Exception )
                 {
-                    CurrentCorrespondingCode = 100;
+                    _terrainTypeRealTime = 100;
                 }
             }
         }
 
-        if (checkChangeCCCode != CurrentCorrespondingCode)
+        if (_currentTerrainType != _terrainTypeRealTime)
         {
-            checkChangeCCCode = CurrentCorrespondingCode;
-            if (checkChangeCCCode == CorrespondingCode)
+            _currentTerrainType = _terrainTypeRealTime;
+            if (_currentTerrainType == _terrainType)
             {
                 
                 if (gameObject.GetComponent<CharacterMove>() != null)
                 {
-                    //ChangeSpeed(slowspeed,normalspeed, gameObject.GetComponent<CharacterMove>().speed);
-                    gameObject.GetComponent<CharacterMove>().ChangeSpeed(timeChange, slowspeed, normalspeed);
+                    gameObject.GetComponent<CharacterMove>().ChangeSpeed(timeChangeSpeed, slowspeed, normalspeed);
                 }
                 else if (gameObject.GetComponent<CarController>() != null)
                 {
-                    gameObject.GetComponent<CarController>().ChangeSpeed(timeChange, slowspeed, normalspeed);
+                    gameObject.GetComponent<CarController>().ChangeSpeed(timeChangeSpeed, slowspeed, normalspeed);
                 }
             }
             else
             {
                 if (gameObject.GetComponent<CharacterMove>() != null)
                 {
-                    //ChangeSpeed(normalspeed,slowspeed, gameObject.GetComponent<CharacterMove>().speed);
-                    gameObject.GetComponent<CharacterMove>().ChangeSpeed(timeChange, normalspeed,slowspeed);
+                    gameObject.GetComponent<CharacterMove>().ChangeSpeed(timeChangeSpeed, normalspeed,slowspeed);
                 }
                 else if (gameObject.GetComponent<CarController>() != null)
                 {
-                    gameObject.GetComponent<CarController>().ChangeSpeed(timeChange, normalspeed,slowspeed);
+                    gameObject.GetComponent<CarController>().ChangeSpeed(timeChangeSpeed, normalspeed,slowspeed);
                 }
             }
 
@@ -78,11 +77,6 @@ public class VehicleData : MonoBehaviour
             Gizmos.color = Color.red;
             Debug.DrawLine(cast.transform.position, cast.transform.position + cast.transform.forward * maxDistancecast);
         }
-    }
-
-    void ChangeSpeed(float _from, float _to , float _speed)
-    {
-        StartCoroutine(timeChange.Tweeng(x => { _speed = x; }, _from, _to));
     }
 }
 
