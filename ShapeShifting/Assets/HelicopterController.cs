@@ -42,7 +42,7 @@ public class HelicopterController : MonoBehaviour
             curentHight = a.y;
         }
 
-        if (other.GetComponent<Obstacle>()!= null)
+        if (other.name == "Ob")
         {
             curentHight = other.transform.parent.GetComponent<Piece>().endPoint.transform.localToWorldMatrix
                 .GetPosition().y;

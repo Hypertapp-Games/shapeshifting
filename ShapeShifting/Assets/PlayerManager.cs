@@ -74,6 +74,19 @@ public class PlayerManager : MonoBehaviour
                 }
             }
         }
+
+        try
+        {
+            if (piece.name == "Fly Piece")
+            {
+                isFlying = true;
+            }
+        }
+        catch
+        {
+            
+        }
+        
     }
 
     public IEnumerator CheckNoMovement()
