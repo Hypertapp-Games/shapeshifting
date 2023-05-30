@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 78625460}
   - component: {fileID: 78625459}
   m_Layer: 5
-  m_Name: Helicopter
+  m_Name: BT_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 953366259}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
         m_MethodName: Vehicle1
         m_Mode: 1
@@ -611,9 +611,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curentHight: 0
-  colisions: {fileID: 0}
   characterMove: {fileID: 196425269}
-  terrainManager: {fileID: 1428946164}
+  temp: 0
+  playerManager: {fileID: 0}
 --- !u!65 &196425273
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -655,8 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Corresponding:
-  - {fileID: 11400000, guid: 46c1e38c71dc84cdfa9edf778da23fbd, type: 2}
+  TerrainCorresponding: []
   CorrespondingCode: 0
   isGroundVehicle: 0
   normalspeed: 0
@@ -1329,7 +1328,7 @@ GameObject:
   - component: {fileID: 560046158}
   - component: {fileID: 560046157}
   m_Layer: 5
-  m_Name: Car
+  m_Name: BT_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1400,7 +1399,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 953366259}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
         m_MethodName: Vehicle0
         m_Mode: 1
@@ -1534,15 +1533,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115bc8ecfedc44f41b636fa1495fcf5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllVehicle:
+  allVehicle:
   - {fileID: 5876435289128598214, guid: d7ce12a978f8d423dabbf9e0ad961365, type: 3}
   - {fileID: 2257062211337845445, guid: 4ab42f8e6d3824432be71ce8ca9a218a, type: 3}
   - {fileID: 300415289731791850, guid: 8d0b1b822ccda41deb17ea35dbc0694f, type: 3}
   - {fileID: 8143247729538886245, guid: a1ae384afb5304c1492cc0b609420d87, type: 3}
   - {fileID: 2089821383966912001, guid: 68cdca19fb6284c42bee02939473a4bf, type: 3}
   - {fileID: 5842704898907610187, guid: e59fe1eb1adeb4ffeaafe968c5d1b786, type: 3}
-  AllPlayer:
+  allPlayer:
   - {fileID: 953366259}
+  _uiManager: {fileID: 0}
+  _spawnTerrains: {fileID: 0}
 --- !u!4 &640729669
 Transform:
   m_ObjectHideFlags: 0
@@ -1835,7 +1836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Corresponding:
+  TerrainCorresponding:
   - {fileID: 11400000, guid: b4bbfe61495484b3f928099fb0bd6ddb, type: 2}
   - {fileID: 11400000, guid: 5041c649dd0ec4f8995ade1b5b23acf9, type: 2}
   CorrespondingCode: 0
@@ -2194,11 +2195,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9dde250b2b98864ba87f4507269cf0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrefabVehicles: []
-  Vehicle: []
+  gameManager: {fileID: 640729668}
+  prefabVehicles: []
+  vehicle: []
   currentVehicle: {fileID: 756872690}
   choseVehicle: {fileID: 756872690}
-  Cam: {fileID: 422541975}
+  cam: {fileID: 422541975}
+  isPlayer: 1
+  terrainManager: {fileID: 1428946159}
+  currentPosition: {x: 0, y: 0, z: 0}
+  currentPiece: 0
+  currentVehiclePosition: {x: 0, y: 0, z: 0}
 --- !u!4 &953366260
 Transform:
   m_ObjectHideFlags: 0
@@ -2793,7 +2800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8072000018344801565, guid: 2f7535b277bff4de99638aeb9584a41e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8126903486266882887, guid: 2f7535b277bff4de99638aeb9584a41e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3423,7 +3430,6 @@ GameObject:
   - component: {fileID: 1428946161}
   - component: {fileID: 1428946163}
   - component: {fileID: 1428946162}
-  - component: {fileID: 1428946164}
   m_Layer: 0
   m_Name: Terrainss
   m_TagString: Untagged
@@ -3507,20 +3513,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428946159}
   m_Mesh: {fileID: 0}
---- !u!114 &1428946164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428946159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 226b62c779a5cf5429709aa46cee957e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentPosition: {x: 0, y: 0, z: 0}
-  currentPiece: 0
 --- !u!1 &1446146072
 GameObject:
   m_ObjectHideFlags: 0
@@ -4097,8 +4089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Corresponding:
-  - {fileID: 11400000, guid: c513d8dd72af043318b837a71f28f999, type: 2}
+  TerrainCorresponding: []
   CorrespondingCode: 0
   isGroundVehicle: 0
   normalspeed: 0
@@ -4197,7 +4188,7 @@ GameObject:
   - component: {fileID: 1662296310}
   - component: {fileID: 1662296309}
   m_Layer: 5
-  m_Name: Glider
+  m_Name: BT_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4268,7 +4259,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 953366259}
         m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
         m_MethodName: Vehicle2
         m_Mode: 1
@@ -4849,8 +4840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Corresponding:
-  - {fileID: 11400000, guid: eb83c1e563e9f4ddf9b874999f9e80a6, type: 2}
+  TerrainCorresponding: []
   CorrespondingCode: 0
   isGroundVehicle: 1
   normalspeed: 0.15
@@ -5919,7 +5909,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4510004954695607366
 Transform:
   m_ObjectHideFlags: 0
@@ -6004,9 +5994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Corresponding:
-  - {fileID: 11400000, guid: b4bbfe61495484b3f928099fb0bd6ddb, type: 2}
-  - {fileID: 11400000, guid: 5041c649dd0ec4f8995ade1b5b23acf9, type: 2}
+  TerrainCorresponding: []
   CorrespondingCode: 0
   isGroundVehicle: 1
   normalspeed: 8
@@ -6614,9 +6602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Corresponding:
-  - {fileID: 11400000, guid: 32c6b98cbc5b24819bd5fd0f8f819307, type: 2}
-  - {fileID: 11400000, guid: b4bbfe61495484b3f928099fb0bd6ddb, type: 2}
+  TerrainCorresponding: []
   CorrespondingCode: 0
   isGroundVehicle: 1
   normalspeed: 4
