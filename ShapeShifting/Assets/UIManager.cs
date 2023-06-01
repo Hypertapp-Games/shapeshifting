@@ -217,4 +217,9 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(0);
     }
+
+    public void Upgrade()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
