@@ -34,6 +34,12 @@ public class PlayerManager : MonoBehaviour
     private Vector3 noMovementFrames;
     public float timeNoMovement = 0;
     public bool isFlying = false;
+
+    [HideInInspector] public float startPositionX;
+    [HideInInspector] public float endPositionX;
+    [HideInInspector] public float distanceX;
+    [HideInInspector] public float currentPositionX;
+    [HideInInspector] public float distanceTraveled;
     
 
     void Start()
@@ -43,7 +49,10 @@ public class PlayerManager : MonoBehaviour
             cam.player = currentVehicle;
         }
         StartCoroutine(StartGame());
-        
+        startPositionX = currentVehicle.transform.localToWorldMatrix.GetPosition().x;
+        endPositionX = terrainManager.transform.GetChild(terrainManager.transform.childCount-1)
+            .GetComponent<Piece>().startPoint.gameObject.transform.localToWorldMatrix.GetPosition().x;
+        distanceX = endPositionX - startPositionX;
     }
 
     IEnumerator StartGame()
@@ -57,9 +66,11 @@ public class PlayerManager : MonoBehaviour
 
     public void Update()
     {
+        currentVehiclePosition = currentVehicle.transform.localToWorldMatrix.GetPosition();
+        currentPositionX = currentVehiclePosition.x;
+        distanceTraveled = currentPositionX - startPositionX;
         if (_isStart)
         {
-            currentVehiclePosition = currentVehicle.transform.localToWorldMatrix.GetPosition();
             if (currentVehiclePosition.x > currentPosition.x)
             {
                 UpdateCurrentPosition();
@@ -69,8 +80,24 @@ public class PlayerManager : MonoBehaviour
                 }
                 if (CheckEnd() && isPlayer)
                 {
-                    gameManager._uiManager.EndGame();
+                    gameManager._uiManager.EndGame(gameManager.ordinal);
                     cam.enabled = false;
+                    if (gameManager.ordinal == 1)
+                    {
+                        PlayerPrefs.SetInt("Level", gameManager.level+1);
+                        gameManager.coinGetInThisLevel = 500;
+                    }
+                    else
+                    {
+                        gameManager.coinGetInThisLevel = 500 - (gameManager.ordinal-1)*100;
+                    }
+
+                    gameManager._uiManager.coin.text = gameManager.coinGetInThisLevel.ToString();
+                   StartCoroutine(gameManager._uiManager._SicleSlider());
+                }
+                else if(CheckEnd())
+                {
+                    gameManager.ordinal++;
                 }
             }
         }
@@ -108,7 +135,7 @@ public class PlayerManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log(1);
+                    //Debug.Log(1);
                     timeNoMovement += 0.1f;
                 }
 
@@ -149,10 +176,10 @@ public class PlayerManager : MonoBehaviour
 
     public void AutoChangeVehicle()
     {
-        Debug.Log("AutoChangeVehicle");
+        //Debug.Log("AutoChangeVehicle");
         if (currentTerrain.GetComponentInChildren<Obstacle>() != null)
         {
-            Debug.Log(currentTerrain.GetComponentInChildren<Obstacle>().name);
+            //Debug.Log(currentTerrain.GetComponentInChildren<Obstacle>().name);
             piece = currentTerrain.GetComponentInChildren<Obstacle>().gameObject.GetComponent<Piece>();
         }
         else
@@ -174,12 +201,12 @@ public class PlayerManager : MonoBehaviour
             {
                 if (vehicle[j].name == piece.vehicleCanMoveIn[i].name)
                 {
-                    Debug.Log(vehicle[j].name);
+                    //Debug.Log(vehicle[j].name);
                     if (piece.name == "Fly Piece")
                     {
                         choseVehicle = vehicle[j];
                         SwapVehicle();
-                        Debug.Log("StartFly");
+                        //Debug.Log("StartFly");
                         isFlying = true;
                     }
                     else
@@ -208,6 +235,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (currentPiece >= terrainManager.transform.childCount)
         {
+            _isStart = false;
             return true;
         }
         return false;

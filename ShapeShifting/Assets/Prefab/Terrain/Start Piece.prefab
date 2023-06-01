@@ -363,6 +363,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8383649298006445032}
   - component: {fileID: 6902209059949836792}
+  - component: {fileID: 5923304604205497381}
+  - component: {fileID: -432065178736274275}
+  - component: {fileID: -6011361433032208019}
   m_Layer: 0
   m_Name: Start Piece
   m_TagString: Untagged
@@ -410,3 +413,65 @@ MonoBehaviour:
   - {fileID: 2257062211337845445, guid: 4ab42f8e6d3824432be71ce8ca9a218a, type: 3}
   - {fileID: 5842704898907610187, guid: e59fe1eb1adeb4ffeaafe968c5d1b786, type: 3}
   - {fileID: 300415289731791850, guid: 8d0b1b822ccda41deb17ea35dbc0694f, type: 3}
+--- !u!33 &5923304604205497381
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8488625871287172199}
+  m_Mesh: {fileID: 0}
+--- !u!23 &-432065178736274275
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8488625871287172199}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-6011361433032208019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8488625871287172199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d06a238f1399461390c53b99ce9fd50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

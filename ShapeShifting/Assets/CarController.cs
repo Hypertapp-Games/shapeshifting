@@ -39,8 +39,6 @@ public class CarController : MonoBehaviour
     void Update()
     {
         AnimateWheels();
-       
-       
     }
     
     void LateUpdate()
@@ -54,8 +52,8 @@ public class CarController : MonoBehaviour
         if (vel.z > setCarSpeed) vel.z = setCarSpeed;
         else if (vel.z < -setCarSpeed) vel.z = -setCarSpeed;
         this.GetComponent<Rigidbody>().velocity = transform.TransformDirection(vel);
-        
-        
+        transform.rotation = Quaternion.Euler(transform.localEulerAngles.x,90,0);
+
     }
 
 

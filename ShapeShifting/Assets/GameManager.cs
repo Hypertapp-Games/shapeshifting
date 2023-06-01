@@ -10,12 +10,18 @@ public class GameManager : MonoBehaviour
     public List<PlayerManager> allPlayer = new List<PlayerManager>();
     [HideInInspector]public UIManager _uiManager;
     [HideInInspector]public SpawnTerrains _spawnTerrains;
+    [HideInInspector] public int ordinal = 1;
+    public int level = 0;
+    public int coin = 0;
+    public int coinGetInThisLevel = 0;
     private void Start()
     {
         Application.targetFrameRate = 60;
         _uiManager = gameObject.GetComponent<UIManager>();
         _spawnTerrains = gameObject.GetComponent<SpawnTerrains>();
         RandomVehicleUseLevel();
+        level = PlayerPrefs.GetInt("Level");
+        coin = PlayerPrefs.GetInt("Coin");
     }
     void RandomVehicleUseLevel()
     {
