@@ -41,37 +41,38 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets/ATutorial/Scripts/AnimatorController.cs" />
+     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs" />
+     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs" />
      <Compile Include="Assets/FollowPlayer.cs" />
      <Compile Include="Assets/VehicleData.cs" />
+     <Compile Include="Assets/CarryCoins.cs" />
      <Compile Include="Assets/UIManager.cs" />
+     <Compile Include="Assets/ATutorial/Scripts/Hexagon/HexSpawner.cs" />
      <Compile Include="Assets/PlayerManager.cs" />
+     <Compile Include="Assets/Joystick Pack/Examples/JoystickPlayerExample.cs" />
      <Compile Include="Assets/Extns.cs" />
      <Compile Include="Assets/AutoScrolling.cs" />
      <Compile Include="Assets/CombiningMeshes.cs" />
      <Compile Include="Assets/Piece.cs" />
      <Compile Include="Assets/GliderController.cs" />
+     <Compile Include="Assets/PlayerMovement.cs" />
      <Compile Include="Assets/HelicopterController.cs" />
+     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs" />
+     <Compile Include="Assets/Joystick Pack/Scripts/Base/Joystick.cs" />
      <Compile Include="Assets/CharacterMove.cs" />
+     <Compile Include="Assets/Joystick Pack/Examples/JoystickSetterExample.cs" />
      <Compile Include="Assets/Obstacle.cs" />
      <Compile Include="Assets/ExampleDrawMeshInstanced.cs" />
+     <Compile Include="Assets/SpawnListCoin.cs" />
      <Compile Include="Assets/DrillController.cs" />
+     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" />
      <Compile Include="Assets/CarController.cs" />
      <Compile Include="Assets/SpawnTerrains.cs" />
      <Compile Include="Assets/GameManager.cs" />
-     <Compile Include="Assets/TerrainsData.cs" />
-     <Compile Include="Assets/SpawnListCoin.cs" />
-     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/DynamicJoystick.cs" />
-     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" />
-     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs" />
-     <Compile Include="Assets/PlayerMovement.cs" />
-     <Compile Include="Assets/ATutorial/Scripts/Hexagon/HexSpawner.cs" />
-     <Compile Include="Assets/Joystick Pack/Scripts/Base/Joystick.cs" />
      <Compile Include="Assets/ATutorial/Scripts/Hexagon/Hex.cs" />
-     <Compile Include="Assets/Joystick Pack/Examples/JoystickSetterExample.cs" />
-     <Compile Include="Assets/Joystick Pack/Examples/JoystickPlayerExample.cs" />
-     <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs" />
-     <Compile Include="Assets/ATutorial/Scripts/AnimatorController.cs" />
-     <Compile Include="Assets/CarryCoins.cs" />
+     <Compile Include="Assets/TerrainsData.cs" />
+     <Compile Include="Assets/UpgradePoint.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/Joystick Pack/Scripts/Joysticks" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
@@ -86,6 +87,7 @@
      <Folder Include="Assets/Arcade_Car_Physics/Textures/Flash" />
      <Folder Include="Assets/Prefab/Model/RaceTrack" />
      <Folder Include="Assets/ATutorial" />
+     <Folder Include="Assets/Prefab/UI" />
      <Folder Include="Assets/Arcade_Car_Physics/Textures/White puff" />
      <Folder Include="Assets/TextMesh Pro/Resources/Fonts &amp; Materials" />
      <Folder Include="Assets/Prefab/TerrainData" />
@@ -119,6 +121,7 @@
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
      <Folder Include="Assets/TextMesh Pro/Shaders" />
+     <Folder Include="Assets/Anim" />
      <Folder Include="Assets/TextMesh Pro/Resources/Style Sheets" />
      <Folder Include="Assets/Joystick Pack/Examples" />
      <Folder Include="Assets/TextMesh Pro/Fonts" />

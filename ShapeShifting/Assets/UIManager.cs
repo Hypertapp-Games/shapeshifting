@@ -197,14 +197,25 @@ public class UIManager : MonoBehaviour
     public void GetBonusCoin()
     {
         Debug.Log("GetBonusCoin");
-        PlayerPrefs.SetInt("Coin", gameManager.coin + gameManager.coinGetInThisLevel*xcoin);
+        gameManager.coin += gameManager.coinGetInThisLevel * xcoin;
+        if (gameManager.coin >= 100000)
+        {
+            gameManager.coin = 100000;
+        }
+        PlayerPrefs.SetInt("Coin", gameManager.coin);
         StartCoroutine(RePlay());
     }
 
     public void NoGetBonusCoin()
     {
         Debug.Log("NoGetBonusCoin");
-        PlayerPrefs.SetInt("Coin", gameManager.coin + gameManager.coinGetInThisLevel);
+        gameManager.coin += gameManager.coinGetInThisLevel;
+        if (gameManager.coin >= 100000)
+        {
+            gameManager.coin = 100000;
+        }
+
+        PlayerPrefs.SetInt("Coin", gameManager.coin );
         StartCoroutine(RePlay());
     }
 

@@ -108,19 +108,32 @@ public class SpawnTerrains : MonoBehaviour
         }
         else
         {
-            int whichTerrrain = Random.Range(0, terrainsData.Count);
-            int terrainCod = terrainsData[whichTerrrain].terrainCode;
-            if (terrainCod  != currentTerrainCod)
+            int i = 0;
+            int j = 0;
+            while (i == 0)
             {
-                currentTerrainCod = terrainCod;
-                return whichTerrrain;
+                j++;
+                int whichTerrrain = Random.Range(0, terrainsData.Count);
+                int terrainCod = terrainsData[whichTerrrain].terrainCode;
+                if (terrainCod != currentTerrainCod)
+                {
+                    currentTerrainCod = terrainCod;
+                    i++;
+                    return whichTerrrain;
+                }
+
+                if (j > 50)
+                {
+                    return 0;
+                }
             }
-            else
-            {
-                return GetCurrrentTerrain();
-            }
+            return 0;
+            // else
+            // {
+            //     return GetCurrrentTerrain();
+            // }
         }
-       
+
     }
 
     public void SpawnAttachTerrain(GameObject terrain,GameObject attach)

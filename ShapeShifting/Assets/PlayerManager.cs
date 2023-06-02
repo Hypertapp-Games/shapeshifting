@@ -27,7 +27,7 @@ public class PlayerManager : MonoBehaviour
     [HideInInspector]public Vector3 currentPosition = new Vector3(0,0,0);
     [SerializeField]public int currentPiece = 0;
     [HideInInspector] public Vector3 currentVehiclePosition;
-    
+    [Header("GetCurrentPosition")]
     public GameObject currentTerrain;
     public  Piece piece;
     private Vector3 positionInFrames;
@@ -40,7 +40,8 @@ public class PlayerManager : MonoBehaviour
     [HideInInspector] public float distanceX;
     [HideInInspector] public float currentPositionX;
     [HideInInspector] public float distanceTraveled;
-    
+    public List<GameObject> _click = new List<GameObject>();
+
 
     void Start()
     {
@@ -121,30 +122,42 @@ public class PlayerManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.1f);
-            if (!isPlayer)
+            
+            positionInFrames = currentVehicle.gameObject.transform.localToWorldMatrix.GetPosition();
+            double x = Math.Round(positionInFrames.x, 2);
+            double y = Math.Round(positionInFrames.y, 2);
+            double z = Math.Round(positionInFrames.z, 2);
+            positionInFrames= new Vector3((float)x, (float)y, (float)z);
+            if (noMovementFrames != positionInFrames)
             {
-                positionInFrames = currentVehicle.gameObject.transform.localToWorldMatrix.GetPosition();
-                double x = Math.Round(positionInFrames.x, 2);
-                double y = Math.Round(positionInFrames.y, 2);
-                double z = Math.Round(positionInFrames.z, 2);
-                positionInFrames= new Vector3((float)x, (float)y, (float)z);
-                if (noMovementFrames != positionInFrames)
+                noMovementFrames = positionInFrames;
+                timeNoMovement = 0;
+            }
+            else
+            {
+                //Debug.Log(1);
+                timeNoMovement += 0.1f;
+            }
+
+            if (timeNoMovement >= 2)
+            {
+                var temp1 = terrainManager.transform.GetChild(currentPiece - 1).gameObject;
+                var temp2 = terrainManager.transform.GetChild(currentPiece).gameObject;
+                if (temp1.name == "River Piece" || temp2.name == "Up Piece")
                 {
-                    noMovementFrames = positionInFrames;
-                    timeNoMovement = 0;
+                    currentTerrain = temp2;
                 }
                 else
                 {
-                    //Debug.Log(1);
-                    timeNoMovement += 0.1f;
+                    currentTerrain = temp1;
                 }
+       
+                //currentTerrain = terrainManager.transform.GetChild(currentPiece).gameObject;
+                   
+                AutoChangeVehicle();
+                timeNoMovement = 0;
+               // Debug.Log(gameObject.name);
 
-                if (timeNoMovement >= 2)
-                {
-                    currentTerrain = terrainManager.transform.GetChild(currentPiece).gameObject;
-                    AutoChangeVehicle();
-                    timeNoMovement = 0;
-                }
             }
         }
     }
@@ -201,18 +214,27 @@ public class PlayerManager : MonoBehaviour
             {
                 if (vehicle[j].name == piece.vehicleCanMoveIn[i].name)
                 {
-                    //Debug.Log(vehicle[j].name);
-                    if (piece.name == "Fly Piece")
+                    
+                    if (!isPlayer)
                     {
-                        choseVehicle = vehicle[j];
-                        SwapVehicle();
-                        //Debug.Log("StartFly");
-                        isFlying = true;
+                        //Debug.Log(vehicle[j].name);
+                        if (piece.name == "Fly Piece")
+                        {
+                            choseVehicle = vehicle[j];
+                            SwapVehicle();
+                            //Debug.Log("StartFly");
+                            isFlying = true;
+                        }
+                        else
+                        {
+                            BotSwapVehicle(j);  
+                        }
                     }
-                    else
+                    else if(isPlayer)
                     {
-                        BotSwapVehicle(j);  
+                        _click[j].gameObject.SetActive(true);
                     }
+                    
                     return;
                 }
             }
@@ -268,6 +290,9 @@ public class PlayerManager : MonoBehaviour
     {
         if (_isStart)
         {
+            _click[0].gameObject.SetActive(false);
+            _click[1].gameObject.SetActive(false);
+            _click[2].gameObject.SetActive(false);
             choseVehicle = vehicle[0];
             SwapVehicle();
         }
@@ -277,6 +302,9 @@ public class PlayerManager : MonoBehaviour
     {
         if (_isStart)
         {
+            _click[0].gameObject.SetActive(false);
+            _click[1].gameObject.SetActive(false);
+            _click[2].gameObject.SetActive(false);
             choseVehicle = vehicle[1];
             SwapVehicle();
         }
@@ -285,6 +313,9 @@ public class PlayerManager : MonoBehaviour
     {
         if (_isStart)
         {
+            _click[0].gameObject.SetActive(false);
+            _click[1].gameObject.SetActive(false);
+            _click[2].gameObject.SetActive(false);
             choseVehicle = vehicle[2];
             SwapVehicle();
         }

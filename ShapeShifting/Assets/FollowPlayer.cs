@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
@@ -22,8 +23,19 @@ public class FollowPlayer : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(gameObject.transform.position, forward, out hit, dist-2 ))
         {
-            Debug.Log(hit.transform.name);
-            Destroy(hit.transform.parent.gameObject);
+            for (int i = 0; i < hit.transform.parent.childCount; i++)
+            {
+                MeshFilter[] meshFilters = hit.transform.parent.GetComponentsInChildren<MeshFilter>();
+                MeshRenderer[] mers = hit.transform.parent.GetComponentsInChildren<MeshRenderer>();
+                foreach (var meshFilter in meshFilters)
+                {
+                    Destroy(meshFilter);
+                }
+                foreach (var mer in mers)
+                {
+                    Destroy(mer);
+                }
+            }
         }
     }
     private void OnDrawGizmosSelected()

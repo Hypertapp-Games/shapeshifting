@@ -46,7 +46,7 @@ public class CarryCoins : MonoBehaviour
             getCoin = true;
             StartCoroutine(GetCoin());
         }
-        if (other.gameObject.name == "UpgradePoint")
+        if (other.gameObject.name == "UpgradePoint" && other.gameObject.GetComponent<UpgradePoint>().CanUpgrade)
         {
             upgradeCoin = true;
             StartCoroutine(UpgradeCoin(other.gameObject));
@@ -72,9 +72,9 @@ public class CarryCoins : MonoBehaviour
         {
             var co = cointemp[i];
             cointemp.Remove(co);
-            coint.Add(co);
             StartCoroutine(0.2f.Tweeng((p) => co.gameObject.transform.position = p , co.transform.position,  coin1.transform.localToWorldMatrix.GetPosition()));
             yield return new WaitForSeconds(0.2f);
+            coint.Add(co);
             co.transform.position = new Vector3(coin1.transform.localToWorldMatrix.GetPosition().x,currentY,coin1.transform.localToWorldMatrix.GetPosition().z);
             currentY += 0.1f;
             i--;
@@ -83,7 +83,7 @@ public class CarryCoins : MonoBehaviour
     IEnumerator UpgradeCoin(GameObject obj)
     {
         int i = coint.Count-1;
-        while (upgradeCoin && i >= 0 )
+        while (upgradeCoin && i >= 0 && obj.GetComponent<UpgradePoint>().CanUpgrade)
         {
             var co = coint[i];
             coint.Remove(co);
@@ -91,6 +91,7 @@ public class CarryCoins : MonoBehaviour
             StartCoroutine(0.2f.Tweeng((p) => co.gameObject.transform.position = p , co.transform.position,  obj.transform.localToWorldMatrix.GetPosition()));
             yield return new WaitForSeconds(0.2f);
             coin -= 100;
+            obj.GetComponent<UpgradePoint>().Upgrade();
             PlayerPrefs.SetInt("Coin",coin);
             coinText.text = coin.ToString();
             Destroy(co);
