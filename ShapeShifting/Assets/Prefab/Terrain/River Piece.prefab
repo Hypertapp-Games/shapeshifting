@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 8033090230380504112}
   - component: {fileID: 393124008244718066}
   - component: {fileID: 6237882502263016588}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: River
   m_TagString: Untagged
   m_Icon: {fileID: 0}

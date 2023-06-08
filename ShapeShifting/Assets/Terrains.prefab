@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 5732352394514416666}
   - component: {fileID: 487440867778514510}
   - component: {fileID: 6384694224458491404}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 484715137301363851}
   - component: {fileID: 4903675494484436107}
   - component: {fileID: 8073372236520482216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,6 +535,7 @@ MonoBehaviour:
   endPoint: {fileID: 3069301816292104174}
   startPosition: {x: -4.634, y: 1.03, z: 0}
   PieceCode: 0
+  vehicleCanMoveIn: []
 --- !u!114 &4965426684783694923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -547,6 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cub: {fileID: 0}
 --- !u!1 &681496561719555964
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,6 +806,7 @@ MonoBehaviour:
   endPoint: {fileID: 4424436467863519147}
   startPosition: {x: -2.3839998, y: 1.02, z: -0.010000018}
   PieceCode: 0
+  vehicleCanMoveIn: []
 --- !u!114 &7691019207790791186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,6 +819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cub: {fileID: 0}
 --- !u!1 &1362629607005468603
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,6 +1002,7 @@ MonoBehaviour:
   endPoint: {fileID: 1548442906378174949}
   startPosition: {x: -4.638, y: 1.03, z: 0}
   PieceCode: 0
+  vehicleCanMoveIn: []
 --- !u!114 &5264839860819071142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,6 +1015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cub: {fileID: 0}
 --- !u!1 &1486274742969495084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,7 +1125,7 @@ GameObject:
   - component: {fileID: 3630721950484439551}
   - component: {fileID: 8397868709258297750}
   - component: {fileID: 6313147956016063402}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1156,7 +1162,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491390352895348888}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1739,6 +1745,7 @@ MonoBehaviour:
   endPoint: {fileID: 6415848640811704464}
   startPosition: {x: 285.58197, y: 8.732799, z: 407.94977}
   PieceCode: 0
+  vehicleCanMoveIn: []
 --- !u!114 &9012176472896272241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1751,6 +1758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cub: {fileID: 0}
 --- !u!1 &2132577070801291473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1988,7 +1996,7 @@ GameObject:
   - component: {fileID: 1263092187092307864}
   - component: {fileID: 2735549996494415463}
   - component: {fileID: 4957907236363421907}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2224,6 +2232,7 @@ MonoBehaviour:
   endPoint: {fileID: 5595067744828847358}
   startPosition: {x: 285.58197, y: 8.732799, z: 407.94977}
   PieceCode: 0
+  vehicleCanMoveIn: []
 --- !u!114 &5999454883924822753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2236,6 +2245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cub: {fileID: 0}
 --- !u!1 &2438660657585810211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +2556,7 @@ MonoBehaviour:
   endPoint: {fileID: 4565361182964280803}
   startPosition: {x: 4.44, y: 0.74, z: 0}
   PieceCode: 0
+  vehicleCanMoveIn: []
 --- !u!114 &5875148162756407318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2558,6 +2569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cub: {fileID: 0}
 --- !u!1 &2998684624927728696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2612,6 +2624,7 @@ MonoBehaviour:
   endPoint: {fileID: 8150506006048306788}
   startPosition: {x: -15.26, y: 1.03, z: 0}
   PieceCode: 0
+  vehicleCanMoveIn: []
 --- !u!114 &6720822629356975340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2624,6 +2637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cub: {fileID: 0}
 --- !u!1 &3023558493024651560
 GameObject:
   m_ObjectHideFlags: 0
@@ -3117,7 +3131,7 @@ GameObject:
   - component: {fileID: 2958040144958837294}
   - component: {fileID: 5344433097387789323}
   - component: {fileID: 5107625723785664728}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3256,6 +3270,7 @@ MonoBehaviour:
   endPoint: {fileID: 485363755655008922}
   startPosition: {x: 151.83412, y: 0.2700019, z: -90.570045}
   PieceCode: 0
+  vehicleCanMoveIn: []
 --- !u!114 &2705744746783479923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3268,6 +3283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cub: {fileID: 0}
 --- !u!1 &3709570872908063030
 GameObject:
   m_ObjectHideFlags: 0
@@ -3280,7 +3296,7 @@ GameObject:
   - component: {fileID: 5164785162155827005}
   - component: {fileID: 3053013680357401718}
   - component: {fileID: 1080160944382837051}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3474,7 +3490,7 @@ GameObject:
   - component: {fileID: 1406609270124738935}
   - component: {fileID: 4591149394059662647}
   - component: {fileID: 4480116534892626227}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3614,6 +3630,7 @@ MonoBehaviour:
   endPoint: {fileID: 4469646200650463801}
   startPosition: {x: -4.703, y: 1.03, z: 0}
   PieceCode: 0
+  vehicleCanMoveIn: []
 --- !u!114 &8086248437709743455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3626,6 +3643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cub: {fileID: 0}
 --- !u!1 &4069281661690229581
 GameObject:
   m_ObjectHideFlags: 0
@@ -3689,6 +3707,7 @@ MonoBehaviour:
   endPoint: {fileID: 215083860920949151}
   startPosition: {x: -2.3839998, y: 1.02, z: -0.010000018}
   PieceCode: 0
+  vehicleCanMoveIn: []
 --- !u!114 &8120428528528354344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3701,6 +3720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cub: {fileID: 0}
 --- !u!1 &4248585311991403237
 GameObject:
   m_ObjectHideFlags: 0
@@ -3810,7 +3830,7 @@ GameObject:
   - component: {fileID: 1106828600804293873}
   - component: {fileID: 7049250389611863849}
   - component: {fileID: 8356449509954138040}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3906,7 +3926,7 @@ GameObject:
   - component: {fileID: 3758446940538159448}
   - component: {fileID: 3438799048794674815}
   - component: {fileID: 4703892063687465461}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Finish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4052,7 +4072,7 @@ GameObject:
   - component: {fileID: 2946059799189102592}
   - component: {fileID: 8496522652987673276}
   - component: {fileID: 2392427823945912808}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4381,6 +4401,7 @@ MonoBehaviour:
   endPoint: {fileID: 5145059386099123088}
   startPosition: {x: -4.634, y: 1.03, z: 0}
   PieceCode: 0
+  vehicleCanMoveIn: []
 --- !u!114 &4137925808015443177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4393,6 +4414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cub: {fileID: 0}
 --- !u!1 &5145059386099123088
 GameObject:
   m_ObjectHideFlags: 0
@@ -4509,6 +4531,7 @@ MonoBehaviour:
   endPoint: {fileID: 8631623497822479620}
   startPosition: {x: 4.44, y: 0.74, z: 0}
   PieceCode: 0
+  vehicleCanMoveIn: []
 --- !u!114 &137126410170750351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4521,6 +4544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cub: {fileID: 0}
 --- !u!1 &5183266993929614278
 GameObject:
   m_ObjectHideFlags: 0
@@ -5239,7 +5263,7 @@ GameObject:
   - component: {fileID: 7716228476736348231}
   - component: {fileID: 2102492618746399033}
   - component: {fileID: 8428259547579562534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5378,6 +5402,7 @@ MonoBehaviour:
   endPoint: {fileID: 5459419779405771752}
   startPosition: {x: -4.634, y: 1.03, z: 0}
   PieceCode: 0
+  vehicleCanMoveIn: []
 --- !u!114 &5346223608001884890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5390,6 +5415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cub: {fileID: 0}
 --- !u!1 &6373152952425128406
 GameObject:
   m_ObjectHideFlags: 0
@@ -5444,6 +5470,7 @@ MonoBehaviour:
   endPoint: {fileID: 1594932878407756865}
   startPosition: {x: -4.638, y: 1.03, z: 0}
   PieceCode: 0
+  vehicleCanMoveIn: []
 --- !u!114 &5439008813096324114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5456,6 +5483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cub: {fileID: 0}
 --- !u!1 &6393733496256236215
 GameObject:
   m_ObjectHideFlags: 0
@@ -5689,7 +5717,7 @@ GameObject:
   - component: {fileID: 1378752956857756553}
   - component: {fileID: 489086750730322901}
   - component: {fileID: 8684763222962293849}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5817,7 +5845,7 @@ GameObject:
   - component: {fileID: 4037231535631637874}
   - component: {fileID: 1162271072558019761}
   - component: {fileID: 7368415619336083505}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6247,6 +6275,7 @@ MonoBehaviour:
   endPoint: {fileID: 7761294467496009739}
   startPosition: {x: -4.638, y: 1.03, z: 0}
   PieceCode: 0
+  vehicleCanMoveIn: []
 --- !u!114 &8525846196577282374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6259,6 +6288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2cf41b7d139f408486e5026b333a69a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cub: {fileID: 0}
 --- !u!1 &7288736881589375945
 GameObject:
   m_ObjectHideFlags: 0
@@ -6819,6 +6849,7 @@ GameObject:
   - component: {fileID: 8072000018344801537}
   - component: {fileID: 8072000018344801536}
   - component: {fileID: 2031901907}
+  - component: {fileID: 2140606805}
   m_Layer: 0
   m_Name: Terrains
   m_TagString: Untagged
@@ -6923,6 +6954,25 @@ MeshRenderer:
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &2031901907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8072000018344801565}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940373e96b4bc48eaa1110e9dadd01e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrainsData:
+  - {fileID: 11400000, guid: b4bbfe61495484b3f928099fb0bd6ddb, type: 2}
+  - {fileID: 11400000, guid: c513d8dd72af043318b837a71f28f999, type: 2}
+  startPiece: {fileID: 8488625871287172199, guid: 1bb3413ac275a4e389d8ce8d305206e1, type: 3}
+  finishPiece: {fileID: 1113777822629563169, guid: 4d3d143b4602640f089ba55432941d40, type: 3}
+  Terrains: {fileID: 0}
+  NumberPiece: 20
+--- !u!114 &2140606805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7306,7 +7356,7 @@ GameObject:
   - component: {fileID: 319055580298511754}
   - component: {fileID: 2176548474595129589}
   - component: {fileID: 2357113096221070486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7690,7 +7740,7 @@ GameObject:
   - component: {fileID: 2817975161199781614}
   - component: {fileID: 5329576158098719062}
   - component: {fileID: 3932097476489839992}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7787,7 +7837,7 @@ GameObject:
   - component: {fileID: 7712057683145203099}
   - component: {fileID: 3931691010906941589}
   - component: {fileID: 7579786399409687274}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}

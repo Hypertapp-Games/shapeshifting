@@ -71,8 +71,8 @@
      <Compile Include="Assets/SpawnTerrains.cs" />
      <Compile Include="Assets/GameManager.cs" />
      <Compile Include="Assets/ATutorial/Scripts/Hexagon/Hex.cs" />
-     <Compile Include="Assets/TerrainsData.cs" />
      <Compile Include="Assets/UpgradePoint.cs" />
+     <Compile Include="Assets/TerrainsData.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/Joystick Pack/Scripts/Joysticks" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

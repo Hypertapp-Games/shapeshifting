@@ -149,7 +149,7 @@ public class SpawnTerrains : MonoBehaviour
     public void SpawnAttachObstacle(GameObject terrain,GameObject obstacle)
     {
         Piece piece = terrain.GetComponent<Piece>();
-        float pos_x = Random.Range(piece.startPoint.transform.localToWorldMatrix.GetPosition().x, piece.endPoint.transform.localToWorldMatrix.GetPosition().x);
+        float pos_x = Random.Range(piece.startPoint.transform.localToWorldMatrix.GetPosition().x+2, piece.endPoint.transform.localToWorldMatrix.GetPosition().x-2);
         Vector3 spawmPos = new Vector3(pos_x, piece.startPoint.transform.localToWorldMatrix.GetPosition().y, piece.startPoint.transform.localToWorldMatrix.GetPosition().z);
         GameObject _attach = Instantiate(obstacle,spawmPos,Quaternion.identity);
         _attach.transform.parent = terrain.transform;

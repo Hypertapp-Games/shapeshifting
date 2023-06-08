@@ -328,12 +328,14 @@ public class PlayerManager : MonoBehaviour
             choseVehicle.transform.position = currentVehicle.transform.localToWorldMatrix.GetPosition();
             currentVehicle.gameObject.SetActive(false);
             currentVehicle = choseVehicle;
+            
+            currentVehicle.transform.eulerAngles = new Vector3(0,90,0);
+            currentVehicle.gameObject.SetActive(true);
             if (currentVehicle.GetComponent<CarController>() != null)
             {
                 currentVehicle.GetComponent<CarController>().AddForce();
             }
-            currentVehicle.transform.eulerAngles = new Vector3(0,90,0);
-            currentVehicle.gameObject.SetActive(true);
+            
 
             if (currentVehicle.GetComponent<HelicopterController>()!= null)
             {
