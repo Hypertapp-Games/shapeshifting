@@ -7,6 +7,7 @@ public class CharacterMove : MonoBehaviour
 {
     // Start is called before the first frame update
     public float speed = 10.0f;
+    public bool bootSpeed = false;
     public float gravity =-9.8f;
     public CharacterController cc;
     void Start()
@@ -33,6 +34,10 @@ public class CharacterMove : MonoBehaviour
     }
     public void ChangeSpeed(float timeChange ,float _from, float _to)
     {
+        if (bootSpeed)
+        {
+            _to += _to * 0.25f;
+        }
         StartCoroutine(timeChange.Tweeng(x => { speed = x; }, _from, _to));
     }
 }

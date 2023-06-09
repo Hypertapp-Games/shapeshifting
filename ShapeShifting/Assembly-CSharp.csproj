@@ -73,6 +73,8 @@
     <Compile Include="Assets\HelicopterController.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
+    <Compile Include="Assets\Vehicle.cs" />
+    <Compile Include="Assets\TestFT.cs" />
     <Compile Include="Assets\CharacterMove.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Obstacle.cs" />

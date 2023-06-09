@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject ButtonPnl;
     public GameObject RePlayPnl;
     public GameObject SliderPnl;
+    public GameObject BootPnl;
     
     
     List<AutoScrolling> autoScrollings = new List<AutoScrolling>();
@@ -31,6 +32,8 @@ public class UIManager : MonoBehaviour
     
     [Header("FPS")]
     public TMP_Text fps;
+    [Header("CoinNumber")]
+    public TMP_Text CoinNumberText;
 
     [Header("BonusCoin")]
     public TMP_Text ordinal;
@@ -43,20 +46,52 @@ public class UIManager : MonoBehaviour
     public TMP_Text cointext;
     public GameObject GetBonusCoinBtn;
     public GameObject NoGetBonusCoinBtn;
+
+    [Header("BootSpeedButton")]
+     public List<UnityEngine.UI.Image> bootSpeedBtn = new List<UnityEngine.UI.Image>();
+     public Sprite[] sprites;
+
     void Start()
     {
         ButtonPnl.gameObject.SetActive(true);
-        SliderPnl.gameObject.SetActive(true);
+        SliderPnl.gameObject.SetActive(false);
         RePlayPnl.gameObject.SetActive(false);
+        BootPnl.gameObject.SetActive(false);
         gameManager = gameObject.GetComponent<GameManager>();
         currentLevel.text = gameManager.level.ToString();
         nextLevel.text = (gameManager.level + 1).ToString();
         StartCoroutine(ShowFPS());
+        StartCoroutine(ShowBootSpeedButton());
+
     }
 
     private void OnEnable()
     {
         autoScrollings = ButtonPnl.GetComponentsInChildren<AutoScrolling>().ToList();
+        sprites = Resources.LoadAll<Sprite>("PNG");
+    }
+    public void GetBtnBottSpeedImage(int index, GameObject vhc)
+    {
+        for (int k = 0; k < sprites.Length; k++)
+        {
+            
+            if (sprites[k].name == vhc.name)
+            {
+               bootSpeedBtn[index].sprite = sprites[k];
+            }
+        }
+    }
+    public IEnumerator ShowBootSpeedButton()
+    {
+        yield return new WaitForSeconds(2.3f);
+        ButtonPnl.gameObject.SetActive(false);
+        BootPnl.gameObject.SetActive(true);
+    }
+    public void HideBootSpeedButton()
+    {
+        ButtonPnl.gameObject.SetActive(true);
+        SliderPnl.gameObject.SetActive(true);
+        BootPnl.gameObject.SetActive(false);
     }
     public IEnumerator ShowFPS()
     {

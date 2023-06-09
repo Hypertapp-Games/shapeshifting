@@ -13,6 +13,7 @@ public class CarController : MonoBehaviour
         public WheelCollider wheelCollider;
     }
     public float setCarSpeed = 10;
+    public bool bootSpeed = false;
 
     //public float maxAcceleration = 0f;
     public float torqueSpeed = 600;
@@ -144,6 +145,10 @@ public class CarController : MonoBehaviour
     }
     public void ChangeSpeed(float timeChange ,float _from, float _to)
     {
+        if (bootSpeed)
+        {
+            _to += _to * 0.25f;
+        }
         StartCoroutine(timeChange.Tweeng(x => { setCarSpeed = x; }, _from, _to));
     }
 

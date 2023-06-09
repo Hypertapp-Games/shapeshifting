@@ -12,4 +12,5 @@ public class TerrainsData : ScriptableObject
     [HideInInspector]public int maxCallTemp;
     public List<GameObject> attachObject = new List<GameObject>();
     public int terrainType;
+    public bool IsLock;
 }

@@ -41,6 +41,7 @@ public class PlayerManager : MonoBehaviour
     [HideInInspector] public float currentPositionX;
     [HideInInspector] public float distanceTraveled;
     public List<GameObject> _click = new List<GameObject>();
+    public List<GameObject> bootSpeedBtn = new List<GameObject>();
 
 
     void Start()
@@ -49,19 +50,22 @@ public class PlayerManager : MonoBehaviour
         {
             cam.player = currentVehicle;
         }
-        StartCoroutine(StartGame());
-        startPositionX = currentVehicle.transform.localToWorldMatrix.GetPosition().x;
-        endPositionX = terrainManager.transform.GetChild(terrainManager.transform.childCount-1)
-            .GetComponent<Piece>().startPoint.gameObject.transform.localToWorldMatrix.GetPosition().x;
-        distanceX = endPositionX - startPositionX;
+        //StartCoroutine(StartGame());
+        
     }
 
-    IEnumerator StartGame()
+    public void StartGame()
     {
-        yield return new WaitForSeconds(2.3f);
+        //yield return new WaitForSeconds(2.3f);
+        startPositionX = currentVehicle.transform.localToWorldMatrix.GetPosition().x;
+        endPositionX = terrainManager.transform.GetChild(terrainManager.transform.childCount - 1)
+            .GetComponent<Piece>().startPoint.gameObject.transform.localToWorldMatrix.GetPosition().x;
+        distanceX = endPositionX - startPositionX;
+
         _isStart = true;
         currentVehicle.GetComponent<CharacterMove>().enabled = true;
         StartCoroutine(CheckNoMovement());
+        
 
     }
 
@@ -143,7 +147,7 @@ public class PlayerManager : MonoBehaviour
             {
                 var temp1 = terrainManager.transform.GetChild(currentPiece - 1).gameObject;
                 var temp2 = terrainManager.transform.GetChild(currentPiece).gameObject;
-                if (temp1.name == "River Piece" || temp2.name == "Up Piece")
+                if (temp1.name == "River Piece" || temp2.name == "Up Piece" || temp2.name == "Wood Piece")
                 {
                     currentTerrain = temp2;
                 }
@@ -320,7 +324,38 @@ public class PlayerManager : MonoBehaviour
             SwapVehicle();
         }
     }
-    
+    public void BootSpeedVehicle0()
+    {
+        bootSpeedBtn[0].gameObject.SetActive(false);
+        BootSpeed(vehicle[0]);
+    }
+    public void BootSpeedVehicle1()
+    {
+        bootSpeedBtn[1].gameObject.SetActive(false);
+        BootSpeed(vehicle[1]);
+    }
+    public void BootSpeedVehicle2()
+    {
+        bootSpeedBtn[2].gameObject.SetActive(false);
+        BootSpeed(vehicle[2]);
+    }
+    public void BootSpeed(GameObject vhc)
+    {
+        if (vhc.GetComponent<CharacterMove>() != null)
+        {
+            vhc.GetComponent<CharacterMove>().speed += vhc.GetComponent<CharacterMove>().speed * 0.25f;
+            vhc.GetComponent<CharacterMove>().bootSpeed = true;
+        }
+        else if (vhc.GetComponent<CarController>() != null)
+        {
+            vhc.GetComponent<CarController>().setCarSpeed += vhc.GetComponent<CarController>().setCarSpeed * 0.25f;
+            vhc.GetComponent<CarController>().bootSpeed = true;
+        }
+        gameManager.coin -= 500;
+        PlayerPrefs.SetInt("Coin", gameManager.coin);
+        gameManager._uiManager.CoinNumberText.text = gameManager.coin.ToString();
+    }
+
     public void SwapVehicle()
     {
         if (currentVehicle != choseVehicle)
