@@ -58,13 +58,13 @@ public class SpawnTerrains : MonoBehaviour
                     terran = Instantiate(terrainsData[whichTerrrain].terrain);
                     
                     AnchorTerrain(terran,terrainsData[whichTerrrain].terrain.name);
-                    if (terrainsData[whichTerrrain].terrainType != 0)
-                    {
-                        for (int k = 0; k < terran.transform.childCount; k++)
-                        {
-                            terran.transform.GetChild(k).name = terrainsData[whichTerrrain].terrainType.ToString();
-                        }
-                    }
+                    //if (terrainsData[whichTerrrain].terrainType != 0)
+                    //{
+                    //    for (int k = 0; k < terran.transform.childCount; k++)
+                    //    {
+                    //        terran.transform.GetChild(k).name = terrainsData[whichTerrrain].terrainType.ToString();
+                    //    }
+                    //}
                    
                     i++;
                     if (terrainsData[whichTerrrain].name == "Road Ob")

@@ -75,6 +75,7 @@ public class CarController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Debug.DrawLine(CastFont.transform.position, CastFont.transform.position + CastFont.transform.forward * maxDistancecast);
+        //Debug.DrawLine(CastGound.transform.position, CastGound.transform.position + CastGound.transform.forward * maxDistancecast);
     }
     private void FixedUpdate()
     {
@@ -104,6 +105,7 @@ public class CarController : MonoBehaviour
             var vel = transform.InverseTransformDirection(carRb.velocity);
             vel.z = setCarSpeed;
             carRb.velocity = transform.TransformDirection(vel);
+            Debug.Log(gameObject);
         }
         
         // var vel = transform.InverseTransformDirection(this.GetComponent<Rigidbody>().velocity);

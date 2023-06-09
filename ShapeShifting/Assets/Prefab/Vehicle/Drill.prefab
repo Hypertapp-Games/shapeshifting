@@ -72,7 +72,6 @@ GameObject:
   m_Component:
   - component: {fileID: 305223560622249182}
   - component: {fileID: 442808946181003984}
-  - component: {fileID: 412664962567228064}
   m_Layer: 9
   m_Name: MFRWheel
   m_TagString: Untagged
@@ -126,21 +125,6 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
---- !u!114 &412664962567228064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299948118311911046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a05c62a4bfc8d2b4e8ac987e6d2b693b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cancelSteerAngle: 1
-  wheelModel: {fileID: 8113371960809454452}
-  localRotOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &299973083899191988
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +300,6 @@ GameObject:
   m_Component:
   - component: {fileID: 297988755070550318}
   - component: {fileID: 442798245755341874}
-  - component: {fileID: 412969114708059264}
   m_Layer: 9
   m_Name: MRWheel
   m_TagString: Untagged
@@ -370,21 +353,6 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
---- !u!114 &412969114708059264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300185482455866334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a05c62a4bfc8d2b4e8ac987e6d2b693b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cancelSteerAngle: 1
-  wheelModel: {fileID: 7450663510560862872}
-  localRotOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &300336970104683470
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +363,6 @@ GameObject:
   m_Component:
   - component: {fileID: 298123903801516058}
   - component: {fileID: 442542994864544522}
-  - component: {fileID: 412146890676025494}
   m_Layer: 9
   m_Name: MBLWheel
   m_TagString: Untagged
@@ -449,21 +416,6 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
---- !u!114 &412146890676025494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300336970104683470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a05c62a4bfc8d2b4e8ac987e6d2b693b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cancelSteerAngle: 1
-  wheelModel: {fileID: 6101648854689996818}
-  localRotOffset: {x: 0, y: 180, z: 0}
 --- !u!1 &300375478869904546
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +426,6 @@ GameObject:
   m_Component:
   - component: {fileID: 298360588572463856}
   - component: {fileID: 442562605018089850}
-  - component: {fileID: 412774190903617334}
   m_Layer: 9
   m_Name: MBRWheel
   m_TagString: Untagged
@@ -528,21 +479,6 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
---- !u!114 &412774190903617334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300375478869904546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a05c62a4bfc8d2b4e8ac987e6d2b693b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cancelSteerAngle: 1
-  wheelModel: {fileID: 4688007748847107639}
-  localRotOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &300415289731791850
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,15 +616,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b2e7e7ab9944f09ee336f4c151fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  st:
+  - Terrain: Normal Road
+    speed: 5
+    timeToChangeSpeed: 0.1
   terrainCorresponding:
   - {fileID: 11400000, guid: 32c6b98cbc5b24819bd5fd0f8f819307, type: 2}
   - {fileID: 11400000, guid: b4bbfe61495484b3f928099fb0bd6ddb, type: 2}
   isGroundVehicle: 1
-  normalspeed: 4
   slowspeed: 0.5
-  timeChangeSpeed: 0.1
   cast: {fileID: 4631789496432051104}
   maxDistancecast: 0.5
+  terrainNameInTime: 
+  currentTerrainName: 
+  currentSpeed: 0
+  terrainSpeed: 0
 --- !u!1 &300417658803991848
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,7 +797,6 @@ GameObject:
   m_Component:
   - component: {fileID: 305525753332133222}
   - component: {fileID: 444262525540724440}
-  - component: {fileID: 413179824701960020}
   m_Layer: 9
   m_Name: MFLWheel
   m_TagString: Untagged
@@ -909,21 +850,6 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
---- !u!114 &413179824701960020
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300579859249906756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a05c62a4bfc8d2b4e8ac987e6d2b693b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cancelSteerAngle: 1
-  wheelModel: {fileID: 3144648206579962664}
-  localRotOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &301364946699801204
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,7 +860,6 @@ GameObject:
   m_Component:
   - component: {fileID: 298360962858341976}
   - component: {fileID: 442979084634848546}
-  - component: {fileID: 412890413568293398}
   m_Layer: 9
   m_Name: MLWheel
   m_TagString: Untagged
@@ -988,21 +913,6 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
---- !u!114 &412890413568293398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 301364946699801204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a05c62a4bfc8d2b4e8ac987e6d2b693b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cancelSteerAngle: 1
-  wheelModel: {fileID: 336717792186989860}
-  localRotOffset: {x: 0, y: 180, z: 0}
 --- !u!1 &336717792186989860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,8 +970,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615215633095895324}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

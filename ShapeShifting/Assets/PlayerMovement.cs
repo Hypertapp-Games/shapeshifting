@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private FloatingJoystick _joystick;
 
-    [SerializeField] private AnimatorController _animatorController;
+   // [SerializeField] private AnimatorController _animatorController;
 
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _rotateSpeed;
