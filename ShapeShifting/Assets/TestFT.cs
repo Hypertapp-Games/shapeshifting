@@ -37,9 +37,9 @@ public class TestFT : MonoBehaviour
         }
     }
   
-    public void endGame()
+    public void UnlockNewShape()
     {
-        if(Level == LevelCantUnlock || vhcData.InProcessUnlock)
+        if((Level == LevelCantUnlock || vhcData.InProcessUnlock) && gameManager.ordinal == 1)
         {
             currentProcess += 25;
             vhcData.process = currentProcess;
@@ -59,7 +59,14 @@ public class TestFT : MonoBehaviour
 
             }
 
+            
         }
+        else
+        {
+            gameManager.GetBonusCoin();
+        }
+
+        
     }
     public IEnumerator _FillOnImage()
     {
@@ -71,7 +78,8 @@ public class TestFT : MonoBehaviour
     }
     public IEnumerator HideProcessUnlock()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2f);
         fillArea.gameObject.SetActive(false);
+        gameManager.GetBonusCoin();
     }
 }

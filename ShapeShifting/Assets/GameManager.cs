@@ -11,14 +11,18 @@ public class GameManager : MonoBehaviour
     [HideInInspector]public UIManager _uiManager;
     [HideInInspector]public SpawnTerrains _spawnTerrains;
     [HideInInspector] public int ordinal = 1;
+    [HideInInspector] public TestFT testFt;
     public int level = 0;
     public int coin = 0;
     public int coinGetInThisLevel = 0;
     private void Start()
     {
         _spawnTerrains = gameObject.GetComponent<SpawnTerrains>();
+        testFt = gameObject.GetComponent<TestFT>();
         //RandomVehicleUseLevel();
         level = PlayerPrefs.GetInt("Level");
+        testFt.Level = level;
+         //PlayerPrefs.SetInt("Level",1);
         coin = PlayerPrefs.GetInt("Coin");
         _uiManager.CoinNumberText.text = coin.ToString();
     }
@@ -56,6 +60,28 @@ public class GameManager : MonoBehaviour
         {
             allPlayer[i].SpawnVehicle();
         }
+    }
+
+    public void EndGame()
+    {
+        testFt.UnlockNewShape();
+    }
+
+    public void GetBonusCoin()
+    {
+        _uiManager.EndGame(ordinal);
+        if (ordinal == 1)
+        {
+            PlayerPrefs.SetInt("Level", level+1);
+            coinGetInThisLevel = 500;
+        }
+        else
+        {
+            coinGetInThisLevel = 500 - (ordinal-1)*100;
+        }
+
+        _uiManager.coin.text = coinGetInThisLevel.ToString();
+        StartCoroutine(_uiManager._SicleSlider());
     }
     public void StartRace()
     {

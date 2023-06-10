@@ -85,20 +85,9 @@ public class PlayerManager : MonoBehaviour
                 }
                 if (CheckEnd() && isPlayer)
                 {
-                    gameManager._uiManager.EndGame(gameManager.ordinal);
+                   
                     cam.enabled = false;
-                    if (gameManager.ordinal == 1)
-                    {
-                        PlayerPrefs.SetInt("Level", gameManager.level+1);
-                        gameManager.coinGetInThisLevel = 500;
-                    }
-                    else
-                    {
-                        gameManager.coinGetInThisLevel = 500 - (gameManager.ordinal-1)*100;
-                    }
-
-                    gameManager._uiManager.coin.text = gameManager.coinGetInThisLevel.ToString();
-                   StartCoroutine(gameManager._uiManager._SicleSlider());
+                    gameManager.EndGame();
                 }
                 else if(CheckEnd())
                 {

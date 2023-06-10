@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Up
   m_EditorClassIdentifier: 
   terrain: {fileID: 5817060041780299513, guid: 7e746c69dca5d4db09089c33eef80986, type: 3}
-  terrainCod: 4
+  terrainCode: 0
   maxInSuccesion: 3
   maxCall: 4
   maxCallTemp: 2
   attachObject: []
-  VehicleCode: 0
+  terrainType: 0
+  IsLock: 1

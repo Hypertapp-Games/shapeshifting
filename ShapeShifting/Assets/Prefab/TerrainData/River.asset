@@ -16,6 +16,7 @@ MonoBehaviour:
   terrainCode: 0
   maxInSuccesion: 3
   maxCall: 2
-  maxCallTemp: 0
+  maxCallTemp: 1
   attachObject: []
   terrainType: 2
+  IsLock: 0

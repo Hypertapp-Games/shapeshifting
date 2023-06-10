@@ -20,3 +20,4 @@ MonoBehaviour:
   attachObject:
   - {fileID: 5404357956329465893, guid: 1fb799ad2c1fe4cbc998382e9f89acbc, type: 3}
   terrainType: 1
+  IsLock: 1

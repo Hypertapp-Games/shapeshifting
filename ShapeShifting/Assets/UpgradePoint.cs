@@ -8,6 +8,8 @@ using UnityEngine;
 public class UpgradePoint : MonoBehaviour
 {
     // Start is called before the first frame update
+    public Vehicle vhcData;
+    public GameObject vhc;
     public string nameVehicle = "CarUpgrade";
     public string LvVehicle = "CarUpgradeLv";
     public string CoinVehicle = "CarUpgradeCoin";
@@ -16,12 +18,14 @@ public class UpgradePoint : MonoBehaviour
     public int coinUpgrade = 0;
     public TMP_Text coinText;
     public TMP_Text LvText;
+    public bool isLock = true;
     void Start()
     {
         level = PlayerPrefs.GetInt(LvVehicle);
-        // PlayerPrefs.SetInt(LvVehicle, 1);
-        // PlayerPrefs.SetInt(CoinVehicle,1500);
+         //PlayerPrefs.SetInt(LvVehicle, 1);
+         //PlayerPrefs.SetInt(CoinVehicle,1500);
         StartCoroutine(SetUp());
+       
 
     }
 
@@ -47,6 +51,19 @@ public class UpgradePoint : MonoBehaviour
             CanUpgrade = true;
         }
         LvText.text = level.ToString();
+        for (int i = 0; i < vhcData.VehicleInGame.Count; i++)
+        {
+            if (vhcData.VehicleInGame[i].name == vhc.name)
+            {
+                isLock = false;
+            }
+        }
+
+        if (isLock == true)
+        {
+            CanUpgrade = false;
+            coinText.text = "Lock";
+        }
 
     }
 

@@ -19,3 +19,4 @@ MonoBehaviour:
   maxCallTemp: 0
   attachObject: []
   terrainType: 1
+  IsLock: 0
