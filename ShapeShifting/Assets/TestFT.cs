@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class TestFT : MonoBehaviour
@@ -56,7 +57,9 @@ public class TestFT : MonoBehaviour
                 vhcData.InProcessUnlock = false;
                 vhcData.CurrentUnlock++;
                 vhcData.process = 0;
-
+                EditorUtility.SetDirty(vhcData); 
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
             }
 
             
