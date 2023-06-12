@@ -20,5 +20,6 @@ public class Vehicle : ScriptableObject
     public int process;
     public List<int> LevelUnlock;
     public bool InProcessUnlock;
+    public GameObject vehiclekUseInNextLevel;
 
 }

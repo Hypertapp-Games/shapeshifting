@@ -36,6 +36,7 @@ public class TestFT : MonoBehaviour
                 fill.sprite = sprites[k];
             }
         }
+       // Debug.Log(vhcData.vehiclekUseInNextLevel);
     }
   
     public void UnlockNewShape()
@@ -52,11 +53,13 @@ public class TestFT : MonoBehaviour
             if (currentProcess >= 100)
             {
                 vhcData.VehicleInGame.Add(vhcData.vehicleLock[currentUnlock].vhc);
+                vhcData.vehiclekUseInNextLevel = vhcData.vehicleLock[currentUnlock].vhc;
                 vhcData.TerrainInGame.Add(vhcData.vehicleLock[currentUnlock].terrain);
                 vhcData.vehicleLock[currentUnlock].terrain.IsLock = false;
                 vhcData.InProcessUnlock = false;
                 vhcData.CurrentUnlock++;
                 vhcData.process = 0;
+                
                 EditorUtility.SetDirty(vhcData); 
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();

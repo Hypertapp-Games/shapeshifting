@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrain: {fileID: 7974336361653009622, guid: bc1e7dbc368074432a3bdd0143e8fada, type: 3}
   terrainCode: 0
-  maxInSuccesion: 3
+  maxInSuccesion: 1
   maxCall: 4
-  maxCallTemp: 2
+  maxCallTemp: 1
   attachObject: []
   terrainType: 0
-  IsLock: 1
+  IsLock: 0

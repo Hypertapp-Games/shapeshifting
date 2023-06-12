@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 5009954055719889593}
   m_Layer: 0
   m_Name: Road Up
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -407,4 +407,5 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0, z: 0}
   PieceCode: 0
   vehicleCanMoveIn:
+  - {fileID: 5842704898907610187, guid: e59fe1eb1adeb4ffeaafe968c5d1b786, type: 3}
   - {fileID: 2089821383966912001, guid: 68cdca19fb6284c42bee02939473a4bf, type: 3}

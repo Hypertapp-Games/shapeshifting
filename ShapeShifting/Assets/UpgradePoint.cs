@@ -35,8 +35,8 @@ public class UpgradePoint : MonoBehaviour
         if(level == 0);
         {
             Debug.Log(1);
-            // PlayerPrefs.SetInt(LvVehicle, 1);
-            // PlayerPrefs.SetInt(CoinVehicle,1500);
+            PlayerPrefs.SetInt(LvVehicle, 1);
+            PlayerPrefs.SetInt(CoinVehicle,1500);
         }
         level = PlayerPrefs.GetInt(LvVehicle);
         coinUpgrade = PlayerPrefs.GetInt(CoinVehicle);
@@ -50,7 +50,7 @@ public class UpgradePoint : MonoBehaviour
             coinText.text = coinUpgrade.ToString();
             CanUpgrade = true;
         }
-        LvText.text = level.ToString();
+        LvText.text ="LV "+ level.ToString();
         for (int i = 0; i < vhcData.VehicleInGame.Count; i++)
         {
             if (vhcData.VehicleInGame[i].name == vhc.name)
@@ -80,7 +80,7 @@ public class UpgradePoint : MonoBehaviour
             Debug.Log(level);
         }
         coinText.text = coinUpgrade.ToString();
-        LvText.text = level.ToString();
+        LvText.text = "LV " + level.ToString();
         if (level >= 5)
         {
             coinText.text = "Max";

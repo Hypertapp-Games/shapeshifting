@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -36,8 +37,28 @@ public class GameManager : MonoBehaviour
         List<TerrainsData> temptr = new List<TerrainsData>();
         for (int i = 0; i < 3; i++)
         {
-            var vhr = Random.Range(0, allVehicle.Count);
-            GameObject vhc = allVehicle[vhr];
+            GameObject vhc = null;
+            if (i==0 && testFt.vhcData.vehiclekUseInNextLevel != null)
+            {
+                for (int j = 0; j < allVehicle.Count; j++)
+                {
+                    if(allVehicle[j].name == testFt.vhcData.vehiclekUseInNextLevel.name)
+                    {
+                        vhc = allVehicle[j];
+                        testFt.vhcData.vehiclekUseInNextLevel = null;
+                        EditorUtility.SetDirty(testFt.vhcData);
+                        AssetDatabase.SaveAssets();
+                        AssetDatabase.Refresh();
+                        Debug.Log("UseUnlock");
+                    }
+                }
+            }
+            else
+            {
+                var vhr = Random.Range(0, allVehicle.Count);
+                vhc = allVehicle[vhr];
+            }
+            
             _uiManager.AutoScroll(vhc.name,i);
             _uiManager.GetBtnBottSpeedImage(i, vhc);
             for (int j = 0; j < allPlayer.Count; j++)

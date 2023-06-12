@@ -136,7 +136,7 @@ public class PlayerManager : MonoBehaviour
             {
                 var temp1 = terrainManager.transform.GetChild(currentPiece - 1).gameObject;
                 var temp2 = terrainManager.transform.GetChild(currentPiece).gameObject;
-                if (temp1.name == "River Piece" || temp2.name == "Up Piece" || temp2.name == "Wood Piece")
+                if (temp1.name == "River Piece" || temp2.name == "Up Piece" || temp2.name == "Wood Piece" || temp2.name == "Wall Piece")
                 {
                     currentTerrain = temp2;
                 }
