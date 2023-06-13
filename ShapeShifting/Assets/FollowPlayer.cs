@@ -46,3 +46,54 @@ public class FollowPlayer : MonoBehaviour
         Debug.DrawLine(gameObject.transform.position, gameObject.transform.position + forward );
     }
 }
+// public IEnumerator currentVehicleScaletoZero(float t)
+//     {
+//         changVehicleEffect.gameObject.SetActive(false);
+//         changVehicleEffect.gameObject.SetActive(true);
+//         changVehicleEffect.transform.position = currentVehicle.transform.localToWorldMatrix.GetPosition();
+//         changVehicleEffect.transform.parent = currentVehicle.transform;
+//         
+//         //StartCoroutine(ShowEffect(t * 2.0f));
+//         var mesh = currentVehicle.GetComponent<VehicleData>().mesh;
+//         StartCoroutine(t.Tweeng((p) => mesh.gameObject.transform.localScale = p , mesh.gameObject.transform.localScale,  new Vector3(0, 0, 0)));
+//         yield return new WaitForSeconds(t);
+//         choseVehicle.transform.position = currentVehicle.transform.localToWorldMatrix.GetPosition();
+//         currentVehicle.gameObject.SetActive(false);
+//         currentVehicle = choseVehicle;
+//         
+//         changVehicleEffect.transform.parent = currentVehicle.transform;
+//         
+//         currentVehicle.transform.eulerAngles = new Vector3(0,90,0);
+//         mesh = currentVehicle.GetComponent<VehicleData>().mesh;
+//         StartCoroutine(t.Tweeng((p) => mesh.gameObject.transform.localScale = p , mesh.gameObject.transform.localScale,  new Vector3(1, 1, 1)));
+//         currentVehicle.gameObject.SetActive(true);
+//         if (currentVehicle.GetComponent<CarController>() != null)
+//         {
+//             currentVehicle.GetComponent<CarController>().AddForce();
+//         }
+//             
+//
+//         if (currentVehicle.GetComponent<HelicopterController>()!= null)
+//         {
+//             currentVehicle.GetComponent<HelicopterController>().UpdateCurentHight();
+//         }
+//
+//         if (isPlayer)
+//         {
+//             cam.player = currentVehicle;
+//         }
+//         //StartCoroutine(0.5f.Tweeng())
+//     }
+//
+//     public IEnumerator ShowEffect(float t)
+//     {
+//         float time = 0;
+//         while (time < t)
+//         {
+//             yield return new WaitForSeconds(Time.deltaTime);
+//             time += Time.deltaTime;
+//             //changVehicleEffect.transform.position = Vector3.Lerp(startPosition, currentVehicle.transform.localToWorldMatrix.GetPosition(), Mathf.SmoothStep(0,1,percent) );
+//             changVehicleEffect.transform.position = currentVehicle.transform.localToWorldMatrix.GetPosition();
+//         }
+//         
+//     }

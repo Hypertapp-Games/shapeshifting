@@ -440,3 +440,7 @@
 /Users/mac/Documents/Unity/ShapeShifting/obj/Debug/Assembly-CSharp.csproj.CopyComplete
 /Users/mac/Documents/Unity/ShapeShifting/obj/Debug/Assembly-CSharp.dll
 /Users/mac/Documents/Unity/ShapeShifting/obj/Debug/Assembly-CSharp.pdb
+/Users/mac/Downloads/shapeshifting/ShapeShifting/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache
+/Users/mac/Downloads/shapeshifting/ShapeShifting/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
+/Users/mac/Downloads/shapeshifting/ShapeShifting/obj/Debug/Assembly-CSharp.dll
+/Users/mac/Downloads/shapeshifting/ShapeShifting/obj/Debug/Assembly-CSharp.pdb

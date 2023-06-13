@@ -42,6 +42,7 @@ public class PlayerManager : MonoBehaviour
     [HideInInspector] public float distanceTraveled;
     public List<GameObject> _click = new List<GameObject>();
     public List<GameObject> bootSpeedBtn = new List<GameObject>();
+    public GameObject changVehicleEffect;
 
 
     void Start()
@@ -347,29 +348,86 @@ public class PlayerManager : MonoBehaviour
 
     public void SwapVehicle()
     {
-        if (currentVehicle != choseVehicle)
+       
+         if (currentVehicle != choseVehicle)
+         {
+             StartCoroutine(currentVehicleScaletoZero(0.2f));
+        //     choseVehicle.transform.position = currentVehicle.transform.localToWorldMatrix.GetPosition();
+        //     currentVehicle.gameObject.SetActive(false);
+        //     currentVehicle = choseVehicle;
+        //     
+        //     currentVehicle.transform.eulerAngles = new Vector3(0,90,0);
+        //     currentVehicle.gameObject.SetActive(true);
+        //     if (currentVehicle.GetComponent<CarController>() != null)
+        //     {
+        //         currentVehicle.GetComponent<CarController>().AddForce();
+        //     }
+        //     
+        //
+        //     if (currentVehicle.GetComponent<HelicopterController>()!= null)
+        //     {
+        //         currentVehicle.GetComponent<HelicopterController>().UpdateCurentHight();
+        //     }
+        //
+        //     if (isPlayer)
+        //     {
+        //         cam.player = currentVehicle;
+        //     }
+         }
+
+    }
+    public IEnumerator currentVehicleScaletoZero(float t)
+    {
+        changVehicleEffect.gameObject.SetActive(false);
+        changVehicleEffect.gameObject.SetActive(true);
+        changVehicleEffect.transform.position = currentVehicle.transform.localToWorldMatrix.GetPosition();
+        //changVehicleEffect.transform.parent = cam.transform;
+        
+        //StartCoroutine(ShowEffect(t * 2.0f));
+        var mesh = currentVehicle.GetComponent<VehicleData>().mesh;
+        StartCoroutine(t.Tweeng((p) => mesh.gameObject.transform.localScale = p , mesh.gameObject.transform.localScale,  new Vector3(0, 0, 0)));
+        yield return new WaitForSeconds(t);
+        choseVehicle.transform.position = currentVehicle.transform.localToWorldMatrix.GetPosition();
+        currentVehicle.gameObject.SetActive(false);
+        
+        currentVehicle = choseVehicle;
+        
+        currentVehicle.transform.eulerAngles = new Vector3(0,90,0);
+        mesh = currentVehicle.GetComponent<VehicleData>().mesh;
+        
+        StartCoroutine(t.Tweeng((p) => mesh.gameObject.transform.localScale = p , mesh.gameObject.transform.localScale,  new Vector3(1, 1, 1)));
+        
+        currentVehicle.gameObject.SetActive(true);
+     
+        
+        
+        if (currentVehicle.GetComponent<CarController>() != null)
         {
-            choseVehicle.transform.position = currentVehicle.transform.localToWorldMatrix.GetPosition();
-            currentVehicle.gameObject.SetActive(false);
-            currentVehicle = choseVehicle;
-            
-            currentVehicle.transform.eulerAngles = new Vector3(0,90,0);
-            currentVehicle.gameObject.SetActive(true);
-            if (currentVehicle.GetComponent<CarController>() != null)
-            {
-                currentVehicle.GetComponent<CarController>().AddForce();
-            }
+            currentVehicle.GetComponent<CarController>().AddForce();
+        }
             
 
-            if (currentVehicle.GetComponent<HelicopterController>()!= null)
-            {
-                currentVehicle.GetComponent<HelicopterController>().UpdateCurentHight();
-            }
+        if (currentVehicle.GetComponent<HelicopterController>()!= null)
+        {
+            currentVehicle.GetComponent<HelicopterController>().UpdateCurentHight();
+        }
 
-            if (isPlayer)
-            {
-                cam.player = currentVehicle;
-            }
+        if (isPlayer)
+        {
+            cam.player = currentVehicle;
+        }
+        //StartCoroutine(0.5f.Tweeng())
+    }
+
+    public IEnumerator ShowEffect(float t)
+    {
+        float time = 0;
+        while (time < t)
+        {
+            yield return new WaitForSeconds(Time.deltaTime);
+            time += Time.deltaTime;
+            //changVehicleEffect.transform.position = Vector3.Lerp(startPosition, currentVehicle.transform.localToWorldMatrix.GetPosition(), Mathf.SmoothStep(0,1,percent) );
+            changVehicleEffect.transform.position = currentVehicle.transform.localToWorldMatrix.GetPosition();
         }
         
     }

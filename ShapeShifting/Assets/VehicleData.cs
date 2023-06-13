@@ -32,6 +32,8 @@ public class VehicleData : MonoBehaviour
     public float currentSpeed;
     public float terrainSpeed;
 
+    public GameObject mesh;
+
     private void Start()
     {
         //_terrainType = terrainCorresponding[0].terrainType;

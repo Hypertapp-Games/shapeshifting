@@ -21,7 +21,7 @@ public class HelicopterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < curentHight + 1)
+        if (transform.position.y < curentHight + 2)
         {
             characterMove.gravity = 5;
         }
