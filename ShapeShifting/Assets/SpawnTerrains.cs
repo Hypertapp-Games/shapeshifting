@@ -16,6 +16,8 @@ public class SpawnTerrains : MonoBehaviour
     Vector3 startPoint = new Vector3(0, 0, 0);
     
     int currentTerrainCod = 100;
+    public List<GameObject> attach = new List<GameObject>();
+    public Transform Attach;
     private void Start()
     {
         //SetUpTerrainsData();
@@ -40,12 +42,14 @@ public class SpawnTerrains : MonoBehaviour
             {
                 terran = Instantiate(startPiece);
                 AnchorTerrain(terran,startPiece.name);
+                Spawmscenical(terran);
                 i++;
             }
             else if(i==NumberPiece)
             {
                 terran = Instantiate(finishPiece);
                 AnchorTerrain(terran,finishPiece.name);
+                Spawmscenical(terran);
                 i++;
             }
             else
@@ -58,6 +62,7 @@ public class SpawnTerrains : MonoBehaviour
                     terran = Instantiate(terrainsData[whichTerrrain].terrain);
                     
                     AnchorTerrain(terran,terrainsData[whichTerrrain].terrain.name);
+                    Spawmscenical(terran);
                     //if (terrainsData[whichTerrrain].terrainType != 0)
                     //{
                     //    for (int k = 0; k < terran.transform.childCount; k++)
@@ -153,5 +158,30 @@ public class SpawnTerrains : MonoBehaviour
         Vector3 spawmPos = new Vector3(pos_x, piece.startPoint.transform.localToWorldMatrix.GetPosition().y, piece.startPoint.transform.localToWorldMatrix.GetPosition().z);
         GameObject _attach = Instantiate(obstacle,spawmPos,Quaternion.identity);
         _attach.transform.parent = terrain.transform;
+    }
+
+    public void Spawmscenical(GameObject terrain)
+    {
+        var num = Random.Range(3, 7);
+        Piece piece = terrain.GetComponent<Piece>();
+        int xPos = 0;
+        float attachPosX = 0;
+        float attachPosStart = 0;
+        float attachPosEnd = 0;
+        while (attachPosStart <= attachPosEnd )
+        {
+            for (int i = 0; i < num; i++)
+            {
+                attachPosStart = piece.startPoint.transform.localToWorldMatrix.GetPosition().x + 2 + xPos;
+                attachPosEnd = piece.endPoint.transform.localToWorldMatrix.GetPosition().x - 2;
+                attachPosX = Random.Range(attachPosStart , attachPosEnd);
+            
+                Vector3 spawmPos = new Vector3(attachPosX, piece.startPoint.transform.localToWorldMatrix.GetPosition().y+0.5f, 7);
+                GameObject _attach = Instantiate(attach[Random.Range(0,attach.Count-1)],spawmPos,Quaternion.identity);
+                xPos += 8;
+
+            }
+        }
+        
     }
 }

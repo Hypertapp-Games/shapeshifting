@@ -1505,6 +1505,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 58.549, y: 79.189, z: 109.632}
+--- !u!1 &117270295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 117270296}
+  m_Layer: 0
+  m_Name: Attach
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &117270296
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117270295}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &118249697
 GameObject:
   m_ObjectHideFlags: 0
@@ -6090,6 +6121,13 @@ MonoBehaviour:
   finishPiece: {fileID: 1113777822629563169, guid: 4d3d143b4602640f089ba55432941d40, type: 3}
   Terrains: {fileID: 1428946160}
   NumberPiece: 20
+  attach:
+  - {fileID: 770612189795822765, guid: 37775348ce0c94fcda12cc072a161668, type: 3}
+  - {fileID: 5439361625188758256, guid: a1320581f5a643e4ea7de688fd966e20, type: 3}
+  - {fileID: 5991807470646779933, guid: 398c052abb3ddc444860e46b942cf8fa, type: 3}
+  - {fileID: 710602606115395016, guid: 6967bf26ff7d65148a983b29cde85b0a, type: 3}
+  - {fileID: 2349437767063158747, guid: 1bdf2ce9ef46e8b46b5d7b8b7df4b39e, type: 3}
+  Attach: {fileID: 117270296}
 --- !u!114 &640729668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8815,7 +8853,7 @@ Transform:
   m_Children:
   - {fileID: 5842704898261912620}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &959916034
 GameObject:
@@ -10036,7 +10074,7 @@ Transform:
   - {fileID: 1987504632}
   - {fileID: 551829249}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1031333647
 GameObject:
@@ -13216,7 +13254,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1338438681
 GameObject:
@@ -13785,7 +13823,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1428946161
 MonoBehaviour:
@@ -17341,7 +17379,7 @@ Transform:
   m_Children:
   - {fileID: 5842704898171548584}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1784158597
 GameObject:
@@ -19792,6 +19830,8 @@ MonoBehaviour:
   finishPiece: {fileID: 1113777822629563169, guid: 4d3d143b4602640f089ba55432941d40, type: 3}
   Terrains: {fileID: 1428946160}
   NumberPiece: 20
+  attach: []
+  Attach: {fileID: 0}
 --- !u!1 &2041219651
 GameObject:
   m_ObjectHideFlags: 0
@@ -20173,7 +20213,7 @@ RectTransform:
   - {fileID: 1579463396}
   - {fileID: 893516043}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

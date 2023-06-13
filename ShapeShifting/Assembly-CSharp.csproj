@@ -63,11 +63,14 @@
      <Compile Include="Assets/Vehicle.cs" />
      <Compile Include="Assets/TestFT.cs" />
      <Compile Include="Assets/CharacterMove.cs" />
+     <Compile Include="Assets/Human.cs" />
      <Compile Include="Assets/Joystick Pack/Examples/JoystickSetterExample.cs" />
      <Compile Include="Assets/Obstacle.cs" />
      <Compile Include="Assets/ExampleDrawMeshInstanced.cs" />
+     <Compile Include="Assets/Scripts/ETFXMouseOrbit.cs" />
      <Compile Include="Assets/SpawnListCoin.cs" />
      <Compile Include="Assets/DrillController.cs" />
+     <Compile Include="Assets/Scripts/ETFXLoopScript.cs" />
      <Compile Include="Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs" />
      <Compile Include="Assets/CarController.cs" />
      <Compile Include="Assets/SpawnTerrains.cs" />
@@ -75,9 +78,6 @@
      <Compile Include="Assets/ATutorial/Scripts/Hexagon/Hex.cs" />
      <Compile Include="Assets/UpgradePoint.cs" />
      <Compile Include="Assets/TerrainsData.cs" />
-     <Compile Include="Assets/Scripts/ETFXMouseOrbit.cs" />
-     <Compile Include="Assets/Scripts/ETFXLoopScript.cs" />
-     <Compile Include="Assets/Human.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/Joystick Pack/Scripts/Joysticks" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
@@ -135,6 +135,7 @@
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
      <Folder Include="Assets/TextMesh Pro/Shaders" />
+     <Folder Include="Assets/prefap" />
      <Folder Include="Assets/Anim" />
      <Folder Include="Assets/TextMesh Pro/Resources/Style Sheets" />
      <Folder Include="Assets/Joystick Pack/Examples" />
@@ -145,6 +146,7 @@
      <Folder Include="Assets/ATutorial/Animations" />
      <Folder Include="Assets/Prefab/Terrain/Sand Road" />
      <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
+     <Folder Include="Assets/prefap/grass" />
      <Folder Include="Assets/Effect Pack/Materials" />
      <None Include="Assets/Material/Shader/SimpleSurfaceShader.shader" />
      <Folder Include="Assets/Joystick Pack/Sprites/All Axis Backgrounds" />
