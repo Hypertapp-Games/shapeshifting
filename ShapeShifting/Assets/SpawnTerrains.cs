@@ -35,6 +35,8 @@ public class SpawnTerrains : MonoBehaviour
         //SetUpTerrainsData();
     }
 
+
+
     public void SetUpTerrainsData()
     {
         for (int i = 0; i < terrainsData.Count; i++)
@@ -64,6 +66,8 @@ public class SpawnTerrains : MonoBehaviour
                 Spawmscenical(terran);
                 i++;
             }
+            
+            
             else
             {
                 int whichTerrrain = GetCurrrentTerrain();//Random.Range(0, terrainsData.Count);
@@ -75,14 +79,7 @@ public class SpawnTerrains : MonoBehaviour
                     
                     AnchorTerrain(terran,terrainsData[whichTerrrain].terrain.name);
                     Spawmscenical(terran);
-                    //if (terrainsData[whichTerrrain].terrainType != 0)
-                    //{
-                    //    for (int k = 0; k < terran.transform.childCount; k++)
-                    //    {
-                    //        terran.transform.GetChild(k).name = terrainsData[whichTerrrain].terrainType.ToString();
-                    //    }
-                    //}
-                   
+
                     i++;
                     if (terrainsData[whichTerrrain].name == "Road Ob")
                     {
@@ -131,9 +128,9 @@ public class SpawnTerrains : MonoBehaviour
             while (i == 0)
             {
                 j++;
-                int whichTerrrain = Random.Range(0, terrainsData.Count);
+                int whichTerrrain = RandomNumber();//Random.Range(0, terrainsData.Count);
                 int terrainCod = terrainsData[whichTerrrain].terrainCode;
-                if (terrainCod != currentTerrainCod)
+                if (terrainCod != currentTerrainCod )
                 {
                     currentTerrainCod = terrainCod;
                     i++;
@@ -152,6 +149,14 @@ public class SpawnTerrains : MonoBehaviour
             // }
         }
 
+    }
+
+    int RandomNumber()
+    {
+        // int a = 100 / terrainsData.Count;
+        // int b = Random.Range(0, 100);
+        // int c = b / a;
+        return Random.Range(0, 100)/(100 / terrainsData.Count);
     }
 
     public void SpawnAttachTerrain(GameObject terrain,GameObject attach)
@@ -200,7 +205,7 @@ public class SpawnTerrains : MonoBehaviour
                         else
                         {
                             temp = bigAttach;
-                            Debug.Log("bigAttach" + spacingSpawnBigAttach);
+                            //Debug.Log("bigAttach" + spacingSpawnBigAttach);
                             spacingSpawnBigAttach = 15;
                         }
                     }

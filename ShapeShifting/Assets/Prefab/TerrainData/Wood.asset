@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Wood
   m_EditorClassIdentifier: 
   terrain: {fileID: 3583484908347205324, guid: a19981444ed394849bf9e8ac61ce48f0, type: 3}
-  terrainCode: 0
+  terrainCode: 9
   maxInSuccesion: 1
-  maxCall: 4
+  maxCall: 10
   maxCallTemp: 2
   attachObject: []
   terrainType: 0

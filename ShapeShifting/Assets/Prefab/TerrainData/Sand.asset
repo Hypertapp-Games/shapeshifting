@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Sand
   m_EditorClassIdentifier: 
   terrain: {fileID: 3958789413831873295, guid: 128c1af0c25c641ab8cfa4122aed34fb, type: 3}
-  terrainCode: 0
+  terrainCode: 6
   maxInSuccesion: 3
-  maxCall: 4
+  maxCall: 10
   maxCallTemp: 2
   attachObject: []
   terrainType: 0

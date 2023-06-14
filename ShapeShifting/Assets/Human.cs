@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,13 @@ public class Human : MonoBehaviour
     void Start()
     {
         characterMove = GetComponent<CharacterMove>();
+    }
+
+    private void OnEnable()
+    {
+        curentHight = 0;
+        curentHightPosition = 0;
+        //Debug.Log("OnEnable");
     }
 
     // Update is called once per frame
@@ -29,7 +37,6 @@ public class Human : MonoBehaviour
     {
         if (other.gameObject.tag == "Wall")
         {
-            Debug.Log(1);
             var piece = other.transform.parent.gameObject;
             var a = piece.GetComponent<Piece>().endPoint.transform.localToWorldMatrix.GetPosition();
             curentHight = a.y;

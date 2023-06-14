@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: River
   m_EditorClassIdentifier: 
   terrain: {fileID: 9060414615623293667, guid: 01dfbfa8b754a464f878bc9fd8a2f4ef, type: 3}
-  terrainCode: 0
+  terrainCode: 2
   maxInSuccesion: 3
-  maxCall: 2
-  maxCallTemp: 1
+  maxCall: 10
+  maxCallTemp: 6
   attachObject: []
   terrainType: 2
   IsLock: 0

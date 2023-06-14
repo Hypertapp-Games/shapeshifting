@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Wall
   m_EditorClassIdentifier: 
   terrain: {fileID: 7974336361653009622, guid: bc1e7dbc368074432a3bdd0143e8fada, type: 3}
-  terrainCode: 0
+  terrainCode: 2
   maxInSuccesion: 1
-  maxCall: 4
-  maxCallTemp: 1
+  maxCall: 10
+  maxCallTemp: 8
   attachObject: []
   terrainType: 0
   IsLock: 0

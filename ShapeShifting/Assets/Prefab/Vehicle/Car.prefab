@@ -69,7 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   setCarSpeed: 8
   bootSpeed: 0
-  torqueSpeed: 50000
+  torqueSpeed: 500000
   _centerOfMass: {x: 0, y: 0, z: 0}
   wheels:
   - wheelModel: {fileID: 4798107617774473867}
@@ -353,7 +353,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2436752786016722809}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0.658}
+  m_LocalPosition: {x: -0, y: -0.1, z: 0.658}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

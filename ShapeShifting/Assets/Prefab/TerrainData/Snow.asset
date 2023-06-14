@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Snow
   m_EditorClassIdentifier: 
   terrain: {fileID: 2225034532385893746, guid: 8f3dffd5333255a43801ef7f9b373d94, type: 3}
-  terrainCode: 0
+  terrainCode: 8
   maxInSuccesion: 3
-  maxCall: 4
+  maxCall: 10
   maxCallTemp: 2
   attachObject: []
   terrainType: 0

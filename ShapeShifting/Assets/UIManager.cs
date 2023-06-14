@@ -83,7 +83,7 @@ public class UIManager : MonoBehaviour
     }
     public IEnumerator ShowBootSpeedButton()
     {
-        yield return new WaitForSeconds(2.3f);
+        yield return new WaitForSeconds(3f);
         ButtonPnl.gameObject.SetActive(false);
         BootPnl.gameObject.SetActive(true);
     }

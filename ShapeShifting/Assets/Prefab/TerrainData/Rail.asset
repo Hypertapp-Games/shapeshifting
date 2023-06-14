@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Rail
   m_EditorClassIdentifier: 
   terrain: {fileID: 6910126028011611679, guid: 5df5037f7253a4fad9de34b923f4317f, type: 3}
-  terrainCode: 0
+  terrainCode: 1
   maxInSuccesion: 3
-  maxCall: 4
+  maxCall: 10
   maxCallTemp: 2
   attachObject: []
   terrainType: 0

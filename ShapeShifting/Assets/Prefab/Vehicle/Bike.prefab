@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428109130876941986}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.39475173, y: -0.04676449, z: -0.2926904}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalPosition: {x: -0.65791935, y: -0.07794081, z: -0.48781717}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1938355911426076282}
@@ -110,8 +110,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2268769490582258851}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.56464887, y: -0.04676461, z: -0.29269043}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalPosition: {x: 0.94108117, y: -0.077941, z: -0.48781723}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1938355911426076282}
@@ -195,7 +195,7 @@ Transform:
   m_GameObject: {fileID: 3054379605225089842}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.48781714, y: 0.13394105, z: -0.02108102}
-  m_LocalScale: {x: 1.6666662, y: 1.6666665, z: 1.6666662}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1244547575475470357}
@@ -343,8 +343,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6908118275592080677}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0.0126485815, y: -0.080364645, z: -0.29269043}
-  m_LocalScale: {x: 0.6, y: 0.51000005, z: 0.65999997}
+  m_LocalPosition: {x: 0.021080961, y: -0.13394105, z: -0.4878172}
+  m_LocalScale: {x: 1, y: 0.85, z: 1.0999995}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1938355911426076282}
@@ -608,7 +608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   setCarSpeed: 6
   bootSpeed: 0
-  torqueSpeed: 6000
+  torqueSpeed: 500000
   _centerOfMass: {x: 0, y: 0, z: 0}
   wheels:
   - wheelModel: {fileID: 2268769490582258851}

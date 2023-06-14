@@ -161,7 +161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113930717533489566}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.03, y: -0.27, z: 1.99}
+  m_LocalPosition: {x: -0.03, y: -0.22, z: 1.99}
   m_LocalScale: {x: 2.3333333, y: 2.3333333, z: 2.3333333}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1334,7 +1334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   setCarSpeed: 6
   bootSpeed: 0
-  torqueSpeed: 90000
+  torqueSpeed: 900000
   _centerOfMass: {x: 0, y: 0, z: 0}
   wheels:
   - wheelModel: {fileID: 2677506367441531328}

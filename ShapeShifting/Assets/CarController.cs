@@ -39,11 +39,11 @@ public class CarController : MonoBehaviour
 
     public void AddForce()
     {
-        // var vel = transform.InverseTransformDirection(this.GetComponent<Rigidbody>().velocity);
-        // vel.z = setCarSpeed;
-        // this.GetComponent<Rigidbody>().velocity = transform.TransformDirection(vel);
-        isStar = false;
-        StartCoroutine(_AddForce());
+         var vel = transform.InverseTransformDirection(this.GetComponent<Rigidbody>().velocity);
+         vel.z = setCarSpeed;
+         this.GetComponent<Rigidbody>().velocity = transform.TransformDirection(vel);
+        // isStar = false;
+        // StartCoroutine(_AddForce());
     }
 
     public IEnumerator _AddForce()
@@ -52,9 +52,10 @@ public class CarController : MonoBehaviour
         {
             yield return new WaitForSeconds(Time.deltaTime);
             RaycastHit hit;
-            if (Physics.Raycast(CastGound.transform.position, CastGound.transform.forward, out hit, maxDistancecast,_target))
+            if (Physics.Raycast(CastGound.transform.position, CastGound.transform.forward, out hit, maxDistancecast))
             {
                 isStar = true;
+                Debug.LogWarning(isStar + hit.transform.gameObject.name);
             }
         }
         
@@ -68,7 +69,7 @@ public class CarController : MonoBehaviour
     
     void LateUpdate()
     {
-        Move();
+        //Move();
     }
 
     public LayerMask _target;
@@ -78,6 +79,12 @@ public class CarController : MonoBehaviour
         Debug.DrawLine(CastFont.transform.position, CastFont.transform.position + CastFont.transform.forward * maxDistancecast);
         //Debug.DrawLine(CastGound.transform.position, CastGound.transform.position + CastGound.transform.forward * maxDistancecast);
     }
+
+    private void OnEnable()
+    {
+        haveObstacleAhead = false;
+    }
+
     private void FixedUpdate()
     {
         RaycastHit hitFront;
@@ -88,6 +95,10 @@ public class CarController : MonoBehaviour
                 if (hitFront.transform.gameObject.name != "Ob")
                 {
                     haveObstacleAhead = true;
+                }
+                else
+                {
+                    haveObstacleAhead = false;
                 }
             }
             else
@@ -101,12 +112,19 @@ public class CarController : MonoBehaviour
             haveObstacleAhead = false;
         }
         RaycastHit hitGround;
-        if ((Physics.Raycast(CastGound.transform.position, CastGound.transform.forward, out hitGround, 1,_target) || !isStar)&& !haveObstacleAhead)
+        if (Physics.Raycast(CastGound.transform.position, CastGound.transform.forward, out hitGround, 0.5f,_target))
         {
             var vel = transform.InverseTransformDirection(carRb.velocity);
-            vel.z = setCarSpeed;
+            if (haveObstacleAhead)
+            {
+                vel.z = 0;
+            }
+            else
+            {
+                vel.z = setCarSpeed; 
+            }
             carRb.velocity = transform.TransformDirection(vel);
-            Debug.Log(gameObject);
+            Debug.Log(gameObject.name +"  "+ hitGround.transform.name+"  "+ isStar);
         }
         
         // var vel = transform.InverseTransformDirection(this.GetComponent<Rigidbody>().velocity);
