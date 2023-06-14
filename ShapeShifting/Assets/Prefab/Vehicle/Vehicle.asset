@@ -31,14 +31,12 @@ MonoBehaviour:
   - {fileID: 2257062211337845445, guid: 4ab42f8e6d3824432be71ce8ca9a218a, type: 3}
   - {fileID: 5842704898907610187, guid: e59fe1eb1adeb4ffeaafe968c5d1b786, type: 3}
   - {fileID: 5876435289128598214, guid: d7ce12a978f8d423dabbf9e0ad961365, type: 3}
-  - {fileID: 2089821383966912001, guid: 68cdca19fb6284c42bee02939473a4bf, type: 3}
   TerrainInGame:
   - {fileID: 11400000, guid: b4bbfe61495484b3f928099fb0bd6ddb, type: 2}
   - {fileID: 11400000, guid: 5041c649dd0ec4f8995ade1b5b23acf9, type: 2}
   - {fileID: 11400000, guid: ab9308f036bd2274fa6de87b0e40de1f, type: 2}
   - {fileID: 11400000, guid: eb83c1e563e9f4ddf9b874999f9e80a6, type: 2}
-  - {fileID: 11400000, guid: 46c1e38c71dc84cdfa9edf778da23fbd, type: 2}
-  CurrentUnlock: 1
+  CurrentUnlock: 0
   process: 0
   LevelUnlock: 01000000060000000b00000010000000150000001a0000001f00000024000000
   InProcessUnlock: 0

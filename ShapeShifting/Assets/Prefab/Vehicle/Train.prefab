@@ -1382,6 +1382,9 @@ MonoBehaviour:
   - Terrain: Normal Road
     speed: 3
     timeToChangeSpeed: 0.1
+  - Terrain: Wood Road
+    speed: 0
+    timeToChangeSpeed: 0
   terrainCorresponding:
   - {fileID: 11400000, guid: 97f487a3a87fa504ab9785bee13ea8e0, type: 2}
   isGroundVehicle: 1

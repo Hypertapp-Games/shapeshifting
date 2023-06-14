@@ -95,7 +95,7 @@ public class UpgradePoint : MonoBehaviour
         level = PlayerPrefs.GetInt(LvVehicle);
         coinUpgrade = PlayerPrefs.GetInt(CoinVehicle);
         coinText.text = coinUpgrade.ToString();
-        LvText.text = level.ToString();
+        LvText.text = "LV " + level.ToString();
         CanUpgrade = true;
     }
 }

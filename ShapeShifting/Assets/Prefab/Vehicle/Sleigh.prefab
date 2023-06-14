@@ -221,6 +221,9 @@ MonoBehaviour:
   - Terrain: Snow Road
     speed: 0.15
     timeToChangeSpeed: 0.1
+  - Terrain: Wood Road
+    speed: 0
+    timeToChangeSpeed: 0
   terrainCorresponding:
   - {fileID: 11400000, guid: 28de588ad9c1af14695abb5655d70d4d, type: 2}
   isGroundVehicle: 1

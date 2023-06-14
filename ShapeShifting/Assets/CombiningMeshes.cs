@@ -7,8 +7,12 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer))]
 public class CombiningMeshes : MonoBehaviour
 {
+    public void OnEnable()
+    {
+		//gameObject.GetComponent<MeshFilter>().mesh.indexFormat = UnityEngine.Rendering.IndexFormat.UInt32;
+	}
 
-	public void Combining()
+    public void Combining()
     {
 
 	    MeshFilter[] filters = GetComponentsInChildren<MeshFilter>();
@@ -66,9 +70,9 @@ public class CombiningMeshes : MonoBehaviour
 		renderers[0].sharedMaterials = materials.ToArray();
 
         Mesh combinedMesh = new Mesh();
-        combinedMesh.CombineMeshes(finalMeshCombineInstancesList.ToArray(), false);
-        filters[0].sharedMesh = combinedMesh;
-        DeactivateCombinedGameObjects(filters);
+		combinedMesh.CombineMeshes(finalMeshCombineInstancesList.ToArray(), false);
+		filters[0].sharedMesh = combinedMesh;
+		DeactivateCombinedGameObjects(filters);
         
     }
     private void DeactivateCombinedGameObjects(MeshFilter[] meshFilters)

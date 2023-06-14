@@ -331,19 +331,23 @@ public class PlayerManager : MonoBehaviour
     }
     public void BootSpeed(GameObject vhc)
     {
-        if (vhc.GetComponent<CharacterMove>() != null)
+        if(gameManager.coin >= 500)
         {
-            vhc.GetComponent<CharacterMove>().speed += vhc.GetComponent<CharacterMove>().speed * 0.25f;
-            vhc.GetComponent<CharacterMove>().bootSpeed = true;
+            if (vhc.GetComponent<CharacterMove>() != null)
+            {
+                vhc.GetComponent<CharacterMove>().speed += vhc.GetComponent<CharacterMove>().speed * 0.25f;
+                vhc.GetComponent<CharacterMove>().bootSpeed = true;
+            }
+            else if (vhc.GetComponent<CarController>() != null)
+            {
+                vhc.GetComponent<CarController>().setCarSpeed += vhc.GetComponent<CarController>().setCarSpeed * 0.25f;
+                vhc.GetComponent<CarController>().bootSpeed = true;
+            }
+            gameManager.coin -= 500;
+            PlayerPrefs.SetInt("Coin", gameManager.coin);
+            gameManager._uiManager.CoinNumberText.text = gameManager.coin.ToString();
         }
-        else if (vhc.GetComponent<CarController>() != null)
-        {
-            vhc.GetComponent<CarController>().setCarSpeed += vhc.GetComponent<CarController>().setCarSpeed * 0.25f;
-            vhc.GetComponent<CarController>().bootSpeed = true;
-        }
-        gameManager.coin -= 500;
-        PlayerPrefs.SetInt("Coin", gameManager.coin);
-        gameManager._uiManager.CoinNumberText.text = gameManager.coin.ToString();
+       
     }
 
     public void SwapVehicle()

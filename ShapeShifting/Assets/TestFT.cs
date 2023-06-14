@@ -41,7 +41,7 @@ public class TestFT : MonoBehaviour
   
     public void UnlockNewShape()
     {
-        if((Level == LevelCantUnlock || vhcData.InProcessUnlock) && gameManager.ordinal == 1)
+        if((Level == LevelCantUnlock || vhcData.InProcessUnlock) && gameManager.ordinal == 1 && vhcData.CurrentUnlock < vhcData.vehicleLock.Count)
         {
             currentProcess += 25;
             vhcData.process = currentProcess;
@@ -59,10 +59,14 @@ public class TestFT : MonoBehaviour
                 vhcData.InProcessUnlock = false;
                 vhcData.CurrentUnlock++;
                 vhcData.process = 0;
-                
-                EditorUtility.SetDirty(vhcData); 
+
+#if UNITY_EDITOR
+                EditorUtility.DisplayDialog("Great!", "You got the pattern right!", "Next Level!");
+                EditorUtility.SetDirty(vhcData);
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();
+#endif
+
             }
 
             

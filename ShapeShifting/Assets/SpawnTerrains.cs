@@ -16,8 +16,20 @@ public class SpawnTerrains : MonoBehaviour
     Vector3 startPoint = new Vector3(0, 0, 0);
     
     int currentTerrainCod = 100;
-    public List<GameObject> attach = new List<GameObject>();
-    public Transform Attach;
+
+    [System.Serializable]
+    public struct Attach
+    {
+        public GameObject _attach;
+        public float _positionZ;
+
+
+    }
+    public List<Attach> smallAttach = new List<Attach>();
+    public List<Attach> bigAttach = new List<Attach>();
+    public List<Attach> temp = new List<Attach>();
+    public int spacingSpawnBigAttach = 0;
+    public Transform attachParent;
     private void Start()
     {
         //SetUpTerrainsData();
@@ -96,6 +108,7 @@ public class SpawnTerrains : MonoBehaviour
             }
         }
         //Terrains.gameObject.GetComponent<CombiningMeshes>().Combining();
+        //attachParent.gameObject.GetComponent<CombiningMeshes>().Combining();
     }
 
     public void AnchorTerrain( GameObject terran, string name)
@@ -162,26 +175,61 @@ public class SpawnTerrains : MonoBehaviour
 
     public void Spawmscenical(GameObject terrain)
     {
-        var num = Random.Range(3, 7);
-        Piece piece = terrain.GetComponent<Piece>();
-        int xPos = 0;
-        float attachPosX = 0;
-        float attachPosStart = 0;
-        float attachPosEnd = 0;
-        while (attachPosStart <= attachPosEnd )
-        {
-            for (int i = 0; i < num; i++)
-            {
-                attachPosStart = piece.startPoint.transform.localToWorldMatrix.GetPosition().x + 2 + xPos;
-                attachPosEnd = piece.endPoint.transform.localToWorldMatrix.GetPosition().x - 2;
-                attachPosX = Random.Range(attachPosStart , attachPosEnd);
-            
-                Vector3 spawmPos = new Vector3(attachPosX, piece.startPoint.transform.localToWorldMatrix.GetPosition().y+0.5f, 7);
-                GameObject _attach = Instantiate(attach[Random.Range(0,attach.Count-1)],spawmPos,Quaternion.identity);
-                xPos += 8;
+        
 
+        if (terrain.name != "Down Piece" && terrain.name != "Ob" && terrain.name != "Up Piece" && terrain.name != "Wall Piece" && terrain.name != "Fly Piece" && terrain.name != "Slope Piece")
+        {
+           
+            var num = Random.Range(3, 7);
+            Piece piece = terrain.GetComponent<Piece>();
+            float xPos = 0;
+            float attachPosX = 0;
+            float attachPosStart = 0;
+            float attachPosEnd = 0;
+            while (attachPosStart <= attachPosEnd)
+            {
+                for (int i = 0; i < num; i++)
+                {
+                    if (spacingSpawnBigAttach <= 0)
+                    {
+                        int a = Random.Range(0, 100);
+                        if (a % 2 == 0)
+                        {
+
+                        }
+                        else
+                        {
+                            temp = bigAttach;
+                            Debug.Log("bigAttach" + spacingSpawnBigAttach);
+                            spacingSpawnBigAttach = 15;
+                        }
+                    }
+                    else
+                    {
+                        temp = smallAttach;
+                    }
+
+                    attachPosStart = piece.startPoint.transform.localToWorldMatrix.GetPosition().x + 2 + xPos;
+                    attachPosEnd = piece.endPoint.transform.localToWorldMatrix.GetPosition().x - 2;
+                    attachPosX = Random.Range(attachPosStart, attachPosEnd);
+
+                    
+                    var b = Random.Range(0, temp.Count-1);
+                    try
+                    {
+                        Vector3 spawmPos = new Vector3(attachPosX, piece.startPoint.transform.localToWorldMatrix.GetPosition().y + 0.5f, temp[b]._positionZ);
+                        GameObject _attach = Instantiate(temp[b]._attach, spawmPos, Quaternion.identity);
+                        _attach.transform.SetParent(attachParent);
+                    }
+                    catch
+                    {
+                        Debug.Log(b);
+                    }
+                    
+                    xPos += 10;
+                    spacingSpawnBigAttach--;
+                }
             }
         }
-        
     }
 }

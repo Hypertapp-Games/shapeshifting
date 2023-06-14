@@ -46,9 +46,13 @@ public class GameManager : MonoBehaviour
                     {
                         vhc = allVehicle[j];
                         testFt.vhcData.vehiclekUseInNextLevel = null;
+#if UNITY_EDITOR
+                        EditorUtility.DisplayDialog("Great!", "You got the pattern right!", "Next Level!");
                         EditorUtility.SetDirty(testFt.vhcData);
                         AssetDatabase.SaveAssets();
                         AssetDatabase.Refresh();
+#endif
+
                         Debug.Log("UseUnlock");
                     }
                 }

@@ -618,6 +618,9 @@ MonoBehaviour:
   - Terrain: Normal Road
     speed: 5
     timeToChangeSpeed: 0.1
+  - Terrain: Wood Road
+    speed: 0
+    timeToChangeSpeed: 0
   terrainCorresponding:
   - {fileID: 11400000, guid: 32c6b98cbc5b24819bd5fd0f8f819307, type: 2}
   - {fileID: 11400000, guid: b4bbfe61495484b3f928099fb0bd6ddb, type: 2}
